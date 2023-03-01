@@ -10,9 +10,11 @@ The constructor downloads the following files:
 
 ## Setup Instructions
 
+This project uses the Python package `project_patcher` to setup and fix any issues in the codebase. For instructions on how to download and generate the project from this directory, see the [`project_patcher`][project_patcher] repository.
+
 The following instructions have been reproduced using [R][rlang] 4.2.2. This project does not make any guarantees that this will work outside of the specified version. Make sure you have R, along with RTools for Windows, before attempting anything below.
 
-This project uses [`renv`][renv] 0.16.0 to manage its dependencies. You can install `renv` from CRAN via:
+This project uses [`renv`][renv] 0.16.0 to manage its dependencies. You can install `renv` from CRAN through an R terminal via:
 
 ```r
 install.packages("renv")
@@ -25,9 +27,13 @@ install.packages("devtools")
 devtools::install_version("renv", version = "0.16.0")
 ```
 
-From there, you can initialize the environment via `renv::init()` followed by `1` in the selection menu or using `renv::restore()`.
+After making sure you have `renv` installed, open an R terminal in the generated `_src` directory. This should bootstrap `renv` to the specified version. From there, you can initialize the environment via `renv::restore()`, or by using `renv::init()` followed by `1` in the selection menu.
 
-Afterwards, run `child_R_code.R`.
+Afterwards, run `child_R_code.R`. You can do this directly in the R terminal via:
+
+```r
+source('child_R_code.R', echo = TRUE)
+```
 
 ## Issues
 
@@ -39,6 +45,8 @@ Afterwards, run `child_R_code.R`.
 
 [paper]: https://doi.org/10.3389/feduc.2022.835911
 [osf]: https://osf.io/fwh6g/
+
+[project_patcher]: https://github.com/ahaim5357/project-patcher
 [rlang]: https://www.r-project.org/
 [renv]: https://rstudio.github.io/renv/
 [devtools]: https://www.r-project.org/nosvn/pandoc/devtools.html

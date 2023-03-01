@@ -1,6 +1,6 @@
 --- child_R_code.R
-+++ child_R_code.R	2023-03-01 12:03:39.149468
-@@ -3,17 +3,17 @@
++++ child_R_code.R	2023-03-01 15:42:40.393019
+@@ -3,21 +3,21 @@
  library(tidyverse)
  library(psych)
  library(mosaic)
@@ -21,3 +21,30 @@
  
  child <- child_public
  
+-psych::describeBy(child$B1_fluency,child$Grade)
++psych::describeBy(child$B1_Fluency,child$Grade)
+ 
+ 
+ 
+@@ -204,7 +204,11 @@
+   
+   bar_f + theme_classic()
+   
+-
++if (!file.exists("figures")) {
++  dir.create(("figures"))
++}
++
++ggsave("figures/block_1_fluency.png")
+ 
+ ## BAR PLOT FOR CREATIVITY
+ #-------- Creating a row of SEs to use for bar plot
+@@ -234,4 +238,5 @@
+   geom_errorbar(aes(ymin = m_c - se_c, ymax = m_c + se_c), width = 0.2,
+                 position = position_dodge(0.9))
+ 
+-bar_cr + theme_classic()
+\ No newline at end of file
++bar_cr + theme_classic()
++ggsave("figures/block_1_creativity.png")
+\ No newline at end of file
