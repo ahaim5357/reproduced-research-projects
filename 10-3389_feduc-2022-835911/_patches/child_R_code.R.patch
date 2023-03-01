@@ -1,5 +1,5 @@
 --- child_R_code.R
-+++ child_R_code.R	2023-03-01 15:42:40.393019
++++ child_R_code.R	2023-03-01 15:47:40.389942
 @@ -3,21 +3,21 @@
  library(tidyverse)
  library(psych)
@@ -26,11 +26,10 @@
  
  
  
-@@ -204,7 +204,11 @@
-   
+@@ -205,6 +205,11 @@
    bar_f + theme_classic()
    
--
+ 
 +if (!file.exists("figures")) {
 +  dir.create(("figures"))
 +}
@@ -39,7 +38,7 @@
  
  ## BAR PLOT FOR CREATIVITY
  #-------- Creating a row of SEs to use for bar plot
-@@ -234,4 +238,5 @@
+@@ -234,4 +239,5 @@
    geom_errorbar(aes(ymin = m_c - se_c, ymax = m_c + se_c), width = 0.2,
                  position = position_dodge(0.9))
  
