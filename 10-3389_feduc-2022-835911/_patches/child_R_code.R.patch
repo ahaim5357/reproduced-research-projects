@@ -1,0 +1,23 @@
+--- child_R_code.R
++++ child_R_code.R	2023-03-01 12:03:39.149468
+@@ -3,17 +3,17 @@
+ library(tidyverse)
+ library(psych)
+ library(mosaic)
+-library(lmer)
++# library(lmer) # Part of lme4
+ library(lmerTest)
+ library(lme4)
+ library(apaTables)
+ library(Hmisc)
+-library(theme_apa)
++library(jtools) # theme_apa is part of jtools
+ library(r2mlm)
+ 
+ #Bring in data
+ library(readr)
+-child_public <- read_csv("~/Desktop/child_public.csv")
++child_public <- read_csv("./child_public_data.csv")
+ 
+ child <- child_public
+ 
