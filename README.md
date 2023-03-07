@@ -8,6 +8,6 @@ For all files (the "Patches") within this repository (the "Repository") for a gi
 
 The Patches for the Projects that contain exclusive rights are provided within the Repository under [Title 17, Chapter 1, Section 107(1,3) of the United States Code][usc] towards ongoing research of improving the robustness of reproducibility in research. Patches that are requested for removal by the Authors of the Project will be purged.
 
-The Patches are provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the Authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Patches or the user of other dealings in the Patches.
+The Patches are provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the Authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Patches or the use of other dealings in the Patches.
 
 [usc]: https://www.copyright.gov/title17/92chap1.html#107
