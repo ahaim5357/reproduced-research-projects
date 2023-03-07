@@ -6,7 +6,7 @@ This is a project constructor and patcher for the paper [*Mathematical Creativit
 
 The constructor downloads the following files:
 
-* [Open Science Framework Project][osf]
+* [Open Science Framework Project][osf] under [CC-BY-4.0][cc4]
 
 ## Setup Instructions
 
@@ -45,6 +45,7 @@ source('child_R_code.R', echo = TRUE)
 
 [paper]: https://doi.org/10.3389/feduc.2022.835911
 [osf]: https://osf.io/fwh6g/
+[cc4]: https://creativecommons.org/licenses/by/4.0/
 
 [project_patcher]: https://github.com/ahaim5357/project-patcher
 [rlang]: https://www.r-project.org/
