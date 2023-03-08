@@ -25,7 +25,7 @@ docker build -t <image_name> .
 From there, you can load into the terminal via:
 
 ```sh
-docker run -v <local_directory>:/volume <image_name> sh
+docker run -itv <local_directory>:/volume <image_name> sh
 ```
 
 A `volume` directory will be created within the image which will link to the `local_directory` specified. You can specify the current directory of execution via `${PWD}`.
