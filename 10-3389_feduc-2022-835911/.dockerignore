@@ -1,0 +1,5 @@
+**/_clean
+**/_src
+**/.dockerignore
+**/Dockerfile*
+**/README.md
