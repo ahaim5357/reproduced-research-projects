@@ -1161,6 +1161,14 @@
         "numDeriv"
       ]
     },
+    "lsr": {
+      "Package": "lsr",
+      "Version": "0.5.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "7ac1df20608b61e9ff049402968a9f08",
+      "Requirements": []
+    },
     "lubridate": {
       "Package": "lubridate",
       "Version": "1.9.1",

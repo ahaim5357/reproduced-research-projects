@@ -1,11 +1,11 @@
 --- child_R_code.R
-+++ child_R_code.R	2023-03-01 15:47:40.389942
++++ child_R_code.R	2023-03-10 13:18:06.629402
 @@ -3,21 +3,21 @@
  library(tidyverse)
  library(psych)
  library(mosaic)
 -library(lmer)
-+# library(lmer) # Part of lme4
++library(lsr) # For calculating eta^2
  library(lmerTest)
  library(lme4)
  library(apaTables)
@@ -26,19 +26,28 @@
  
  
  
-@@ -205,6 +205,11 @@
+@@ -66,9 +66,11 @@
+       #ANCOVA Models
+       Model3 <- aov(B2_Fluency ~ B1_Fluency + Condition, data=child)
+       summary(Model3)
++      etaSquared(Model3)
+     
+       Model3.1 <- aov(B2_Fluency ~ B1_Fluency + Condition + C_Grade, data = child)
+       summary(Model3.1)
++      etaSquared(Model3.1)
+   
+   #Paragraph2
+       #successful random assignment?
+@@ -205,6 +207,8 @@
    bar_f + theme_classic()
    
  
-+if (!file.exists("figures")) {
-+  dir.create(("figures"))
-+}
-+
++if (!file.exists("figures")) dir.create(("figures"))
 +ggsave("figures/block_1_fluency.png")
  
  ## BAR PLOT FOR CREATIVITY
  #-------- Creating a row of SEs to use for bar plot
-@@ -234,4 +239,5 @@
+@@ -234,4 +238,5 @@
    geom_errorbar(aes(ymin = m_c - se_c, ymax = m_c + se_c), width = 0.2,
                  position = position_dodge(0.9))
  

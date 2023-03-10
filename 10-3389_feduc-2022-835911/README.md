@@ -74,6 +74,7 @@ After making sure you have `renv` installed, open an R terminal in the generated
 > * GCC - gcc (All)
 > * XCode Command Line Tools - xcode-select (Mac OSX only)
 > * XQuartz - xquartz (Mac OSX only)
+> * Independent JPEG Group's JPEG - jpeg (Mac OSX only)
 
 Afterwards, run `child_R_code.R`. You can do this directly in the R terminal via:
 
@@ -89,7 +90,6 @@ You can look through the terminal output and compare the numbers within the pape
     * Correction: (r(209) = 0.48, p < 0.001, 95% CI [0.37, 0.58])
 * Incorrect Rounding in Paper: (γ = 0.12, SE = 0.03, p = 0.013, R2 = 0.12)
     * Correction: (γ = 0.12, SE = 0.03, p = 0.014, R2 = 0.12)
-* η^2 is not calculated in the codebase
 
 [paper]: https://doi.org/10.3389/feduc.2022.835911
 [osf]: https://osf.io/fwh6g/
