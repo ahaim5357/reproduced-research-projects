@@ -72,8 +72,8 @@ After making sure you have `renv` installed, open an R terminal in the generated
 > * fontconfig freetype2 - libfontconfig1-dev (Debian, Ubuntu, etc.),fontconfig-devel (Fedora, EPEL), fontconfig_dev (Solaris), freetype (OSX)
 > * libxml-2.0 - libxml2-dev (Debian, Ubuntu, etc.), libxml2-devel (Fedora, CentOS, RHEL), libxml2_dev (Solaris)
 > * GCC - gcc (all)
-> * XCode Command Line Tools - xcode-select (MacOS only)
-> * XQuartz - xquartz (MacOS only)
+> * XCode Command Line Tools - xcode-select (MacOSX only)
+> * XQuartz - xquartz (MacOSX only)
 
 Afterwards, run `child_R_code.R`. You can do this directly in the R terminal via:
 
