@@ -63,7 +63,7 @@ install.packages("devtools")
 devtools::install_version("renv", version = "0.16.0")
 ```
 
-> If downloading `renv` ends up crashing, you may be missing some necessary Operating System specific dependencies. As such, you will need to download or setup the dependencies on your machine. R will mention the necessary dependencies needed every time it crashes; however, for the sake of convenience, the one encountered for MacOS is XQuartz (`xquartz`).
+> If downloading `renv` ends up crashing, you may be missing some necessary Operating System specific dependencies. As such, you will need to download or setup the dependencies on your machine. R will mention the necessary dependencies needed every time it crashes; however, for the sake of convenience, the one encountered for MacOS is XQuartz (`xquartz`) and GCC (`gcc`).
 
 After making sure you have `renv` installed, open an R terminal in the generated `_src` directory. This should bootstrap `renv` to the specified version. If `renv` isn't activated, it will prompt you to activate renv by either answering `Y` to a prompt or by typing `renv::activate()`. From there, you can initialize the environment via `renv::restore()`, or by using `renv::init()` followed by `1` in the selection menu if needed. The process should take anywhere from 30 minutes to an hour.
 
