@@ -2,7 +2,9 @@
 
 This is a project constructor for the paper [*Examining Student Effort on Help through Response Time Decomposition*][paper] by Ashish Gurung, Anthony F. Botelho, and Neil T. Heffernan.
 
-TODO: Add Shields (Exactly reproducible)
+![](https://img.shields.io/badge/Status-Exactly%20Reproducible-success)
+![](https://img.shields.io/badge/Systems-Windows%2C%20Docker-informational)
+![](https://img.shields.io/badge/Language-Python%203.9.5-informational)
 
 ## Project Files
 
@@ -71,7 +73,7 @@ python3 paper_results_replication_file.py
 
 > Your terminal should be within the `analysis` folder, or the code will fail to execute.
 
-You can look through the terminal output and compare the numbers within the paper. Additionally, the figures are generated within teh `images/plots` directory within `_src`.
+You can look through the terminal output and compare the numbers within the paper. Additionally, the figures are generated within the `images/plots` directory within `_src`.
 
 [paper]: https://doi.org/10.1145/3448139.3448167
 [github]: https://github.com/AshishJumbo/ResponseTimeDecomposition
