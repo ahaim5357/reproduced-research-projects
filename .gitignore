@@ -1,3 +1,6 @@
 # Ignore clean and src directories
 _clean
 _src
+
+# Ignore environments
+_env
