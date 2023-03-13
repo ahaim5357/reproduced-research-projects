@@ -1,0 +1,24 @@
+{
+    "files": [
+        {
+            "type": "git",
+            "repository": "https://github.com/AshishJumbo/ResponseTimeDecomposition.git",
+            "commit": "2165e7e913daa9eab38b9655a472dbe4bae320f6"
+        },
+        {
+            "type": "url",
+            "url": "https://drive.google.com/uc?export=download&id=1XYqsty-FpvQ6gSaJ3LKvOr3_HBFpO9Cn&confirm=t&uuid=e9832676-075d-453d-8eda-2b29ebf74201&at=ALgDtsyrNqZzddN9RzH3zX90PMSF:1678459153365",
+            "dir": "data"
+        },
+        {
+            "type": "url",
+            "url": "https://drive.google.com/uc?export=download&id=1mkxPq2XfvngxHnRP9SBC0TJs5Tu38ECk",
+            "dir": "data"
+        },
+        {
+            "type": "url",
+            "url": "https://drive.google.com/uc?export=download&id=1T4ADTdvS97wMwaB8oiI9zI5cZ3T3x6UQ",
+            "dir": "data"
+        }
+    ]
+}
