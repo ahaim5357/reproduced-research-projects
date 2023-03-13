@@ -77,11 +77,11 @@ You can look through the terminal output and compare the numbers within the pape
 
 [paper]: https://doi.org/10.1145/3448139.3448167
 [github]: https://github.com/AshishJumbo/ResponseTimeDecomposition
-[mit]: https://github.com/AshishJumbo/ResponseTimeDecomposition/blob/3b48a8fc98ee1b6ac073c8cae801c52df5ee5537/LICENSE
+[mit]: https://github.com/AshishJumbo/ResponseTimeDecomposition/blob/2165e7e913daa9eab38b9655a472dbe4bae320f6/LICENSE
 [rtd]: https://drive.google.com/file/d/1XYqsty-FpvQ6gSaJ3LKvOr3_HBFpO9Cn/view?usp=sharing
 [hi]: https://drive.google.com/file/d/1mkxPq2XfvngxHnRP9SBC0TJs5Tu38ECk/view?usp=sharing
 [apniwp]: https://drive.google.com/file/d/1T4ADTdvS97wMwaB8oiI9zI5cZ3T3x6UQ/view?usp=sharing
-[apdl]: https://github.com/AshishJumbo/ResponseTimeDecomposition/5f364900f0fbbc482b84920231cd01986b1852ef/master/DATA-LICENSE
+[apdl]: https://github.com/AshishJumbo/ResponseTimeDecomposition/2165e7e913daa9eab38b9655a472dbe4bae320f6/master/DATA-LICENSE
 
 [docker]: https://www.docker.com/
 [python]: https://www.python.org/
