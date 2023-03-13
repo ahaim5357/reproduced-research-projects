@@ -20,7 +20,7 @@ project_patcher init
 
 From there, you can follow the specific instructions associated with each project using the `_src` directory as the working directory.
 
-### Specific Cases
+### Optional Dependencies
 
 Some projects require additional configurations not provided by default within `project-patcher`. As such, you can add optional dependency packages via:
 
