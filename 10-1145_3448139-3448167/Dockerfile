@@ -21,8 +21,7 @@ RUN apk update
 RUN apk add git
 
 ## Install project_patcher and run
-RUN python3 -m pip install GitPython==3.1.30
-RUN python3 -m pip install project-patcher==${PROJECT_PATCHER_VER}
+RUN python3 -m pip install "project-patcher[git]==${PROJECT_PATCHER_VER}"
 RUN project_patcher init
 
 ## Setup project specific info
