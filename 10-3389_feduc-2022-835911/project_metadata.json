@@ -4,5 +4,21 @@
             "type": "osf",
             "id": "fwh6g"
         }
-    ]
+    ],
+    "extra": {
+        "schema_version": 1,
+        "status": 4,
+        "systems": {
+            "_": [
+                "windows-10-native",
+                "mac-10.13",
+                "debian-11"
+            ]
+        },
+        "languages": {
+            "r": [
+                "4.2"
+            ]
+        }
+    }
 }

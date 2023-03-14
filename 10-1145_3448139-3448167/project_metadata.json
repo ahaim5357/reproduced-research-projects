@@ -20,5 +20,26 @@
             "url": "https://drive.google.com/uc?export=download&id=1T4ADTdvS97wMwaB8oiI9zI5cZ3T3x6UQ",
             "dir": "data"
         }
-    ]
+    ],
+    "ignore": [
+        "images*"
+    ],
+    "extra": {
+        "schema_version": 1,
+        "status": 5,
+        "systems": {
+            "_": [
+                "windows-10-native",
+                "mac-10.13",
+                "debian-11"
+            ]
+        },
+        "languages": {
+            "python": [
+                "3.9",
+                "3.10",
+                "3.11"
+            ]
+        }
+    }
 }

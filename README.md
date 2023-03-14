@@ -4,7 +4,7 @@ This is a repository containing all the projects that have been successfully rep
 
 ## Basic Setup Instructions
 
-All projects use [project-patcher] to setup the necessary workspace. You can install `project-patcher` via:
+All projects use [project_patcher] to setup the necessary workspace. You can install `project_patcher` via:
 
 ```sh
 python3 -m pip install 'project_patcher'
@@ -15,20 +15,30 @@ python3 -m pip install 'project_patcher'
 When navigating to any project folder, you should run the following command to setup the necessary project files:
 
 ```sh
-project_patcher init
+project_patcher src
 ```
+
+> If you are using v0.1.0 of `project_patcher`, the command will be:
+>```
+>project_patcher init
+>```
 
 From there, you can follow the specific instructions associated with each project using the `_src` directory as the working directory.
 
 ### Optional Dependencies
 
-Some projects require additional configurations not provided by default within `project-patcher`. As such, you can add optional dependency packages via:
+Some projects require additional configurations not provided by default within `project_patcher`. As such, you can add optional dependency packages via:
 
 ```sh
 python3 -m pip install 'project_patcher[<optional_dependency>]'
 ```
 
-Each project will specify if anything other than the default `project-patcher` is necessary for setup.
+Each project will specify if anything other than the default `project_patcher` is necessary for setup.
+
+> As of 0.2.0, if you want to download all optional dependencies of `project_patcher`, run:
+>```sh
+>python3 -m pip install 'project_patcher[all]'
+>```
 
 ## License
 
@@ -38,7 +48,7 @@ The Patches for the Projects that contain exclusive rights are provided within t
 
 The Patches are provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the Authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Patches or the use of other dealings in the Patches.
 
-[project-patcher]: https://pypi.org/project/project-patcher/
+[project_patcher]: https://pypi.org/project/project-patcher/
 [git]: https://git-scm.com/
 
 [usc]: https://www.copyright.gov/title17/92chap1.html#107
