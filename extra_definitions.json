@@ -45,5 +45,8 @@
     "languages": {
         "python": "Python",
         "r": "R"
+    },
+    "groups": {
+        "lak": "Learning Analytics and Knowledge"
     }
 }

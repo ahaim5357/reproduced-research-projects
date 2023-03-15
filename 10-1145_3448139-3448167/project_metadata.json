@@ -43,6 +43,15 @@
                 "3.11"
             ]
         },
+        "authors": [
+            "https://orcid.org/0000-0001-7003-1476",
+            "https://orcid.org/0000-0002-7373-4959",
+            "https://orcid.org/0000-0002-3280-288X"
+        ],
+        "groups": [
+            "lak",
+            "2021"
+        ],
         "links": {
             "paper": "https://doi.org/10.1145/3448139.3448167",
             "data": "https://drive.google.com/drive/folders/1fRhyVEetIsgRdp-B8J5seH64FCHC2HMI",

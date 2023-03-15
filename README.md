@@ -80,7 +80,26 @@ Each project will specify if anything other than the default `project_patcher` i
         "r": [
             "4.2" // R 4.2.x
         ]
-    }
+    },
+
+    // A list of authors for the associated work
+    "authors": [
+        // ORCiD if available
+        "https://orcid.org/xxxx-xxxx-xxxx-xxxx",
+        // Otherwise first and last name
+        "First Last",
+        // Can be an object with associated link
+        {
+            "name": "First2 Last2",
+            // Location to website of author
+            "link": "https://website.com"
+        }
+    ]
+
+    // A list of tags that can be used to group the data
+    "groups": [
+        "xxx" // Can be used to group metadata
+    ]
 
     // A list of links associated with the project
     "links": {
