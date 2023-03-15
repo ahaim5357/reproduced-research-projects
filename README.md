@@ -49,6 +49,13 @@ Each project will specify if anything other than the default `project_patcher` i
     "schema_version": 1 
 
     // A value [-1, 5] representing the reproducibility of the work
+    // 5 No deviations from reported results
+	// 4 Within confidence interval deviations or typographical errors
+	// 3 Somewhat consistent with some deviations
+	// 2 Major deviation with few consistent results
+	// 1 No consistent results whatsoever
+	// 0 No reproducibility attempt can be made
+	//-1 Reproducibility not tested (Default)
     "status": int 
 
     // A list of systems the project has been tested on
@@ -77,12 +84,25 @@ Each project will specify if anything other than the default `project_patcher` i
 
     // A list of links associated with the project
     "links": {
-        // Keys can either point to strings or lists
+        // Keys can either point to strings/objects or lists of strings/objects
         "paper": "xxx",
         "data": [
             "xxx"
         ],
-        "materials": "xxx",
+        "materials": [
+            {
+                // Link to key resource
+                "value": "xxx",
+
+                // A value [-1, 3] representing the accessibility of the key resource
+                // 3 Public to access and use (Default)
+                // 2 Public to view but not use
+                // 1 Private but can be requested from authors
+                // 0 Cannot obtain access
+                //-1 Unconfirmed accessibility
+                "accessibility": int
+            }
+        ],
         "preregistration": "xxx"
     }
 }
