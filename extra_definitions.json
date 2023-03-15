@@ -1,9 +1,10 @@
 {
+    "schema_version": 1,
     "systems": {
         "windows": {
             "name": "Windows",
             "modifiers": {
-                "native": "Native",
+                "_": "Native",
                 "wsl2": "WSL2"
             }
         },
@@ -32,6 +33,12 @@
                 "10": "buster",
                 "11": "bullseye",
                 "12": "bookworm"
+            }
+        },
+        "docker": {
+            "name": "Docker",
+            "modifiers": {
+                "nvidia": "NVIDIA"
             }
         }
     },

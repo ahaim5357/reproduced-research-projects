@@ -40,6 +40,89 @@ Each project will specify if anything other than the default `project_patcher` i
 >python3 -m pip install 'project_patcher[all]'
 >```
 
+## Extra Schema for Project Metadata
+
+```js
+// Within project_metadata.json@extra
+{
+    // Always 1
+    "schema_version": 1 
+
+    // A value [-1, 5] representing the reproducibility of the work
+    "status": int 
+
+    // A list of systems the project has been tested on
+    "systems": {
+        // Default system information translated using the 'extra_definitions.json'
+        "_": [
+            // Formatted as '<system>-<version>[-<modifier>]'
+            "windows-10", // Windows 10 Native
+            "mac-13", // macOS Ventura
+            "debian-11", // Debian Bullseye
+        ],
+
+        // System has required hardware or underlying modifier
+        "XXX":  [
+            "debian-11" // Debian Bullseye (XXX)
+        ]
+    },
+
+    // A list of languages the project has been tested on
+    "languages": {
+        // Language key contains list of tested versions
+        "r": [
+            "4.2" // R 4.2.x
+        ]
+    }
+
+    // A list of links associated with the project
+    "links": {
+        // Keys can either point to strings or lists
+        "paper": "xxx",
+        "data": [
+            "xxx"
+        ],
+        "materials": "xxx",
+        "preregistration": "xxx"
+    }
+}
+```
+
+## Extra Definitions Schema
+
+```js
+{
+    // Always 1
+    "schema_version": 1,
+
+    // A key value that can be directly associated with an object in the extra section, each section can define their own format
+    "systems": {
+        // Keys can either map to a value indicating the display name
+        "docker": "Docker",
+
+        // ...or they can be an object with additional information
+        "mac": {
+            // The display name of the key
+            "name": "macOS"
+
+            // A list of version keys to their modified values, version number will be surrounding in parentheses
+            "versions": {
+                "12": "Monterey" // Monterey (12)
+            }
+
+            // A list of modifiers to specify as a suffix for the system
+            "modifiers": {
+                "_": "Native" // Default name is macOS Native
+                "xxx": "XXX" // macOS XXX
+            }
+        }
+    },
+    "languages": {
+        // ...
+    }
+}
+```
+
 ## License
 
 For all files (the "Patches") within this repository (the "Repository") for a given author's (the "Authors") reproduced project (the "Project"), permission is granted to the Authors, free of charge, to deal in the Patches without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or seel copies of the Patches, and to permit persons to whom the Patches are furnished to do so. To non-Authors, the Patches are subject to the same permissions granted on the original Project.

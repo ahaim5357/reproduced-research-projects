@@ -12,13 +12,20 @@
             "_": [
                 "windows-10-native",
                 "mac-10.13",
-                "debian-11"
+                "debian-11",
+                "docker-20.10",
+                "docker-23.0"
             ]
         },
         "languages": {
             "r": [
                 "4.2"
             ]
+        },
+        "links": {
+            "paper": "https://doi.org/10.3389/feduc.2022.835911",
+            "data": "https://osf.io/fwh6g/",
+            "materials": "https://osf.io/fwh6g/"
         }
     }
 }

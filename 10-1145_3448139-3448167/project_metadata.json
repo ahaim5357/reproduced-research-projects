@@ -31,7 +31,9 @@
             "_": [
                 "windows-10-native",
                 "mac-10.13",
-                "debian-11"
+                "debian-11",
+                "docker-20.10",
+                "docker-23.0"
             ]
         },
         "languages": {
@@ -40,6 +42,11 @@
                 "3.10",
                 "3.11"
             ]
+        },
+        "links": {
+            "paper": "https://doi.org/10.1145/3448139.3448167",
+            "data": "https://drive.google.com/drive/folders/1fRhyVEetIsgRdp-B8J5seH64FCHC2HMI",
+            "materials": "https://github.com/AshishJumbo/ResponseTimeDecomposition"
         }
     }
 }
