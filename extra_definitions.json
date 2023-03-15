@@ -47,6 +47,12 @@
         "r": "R"
     },
     "groups": {
-        "lak": "Learning Analytics and Knowledge"
+        "lak": "Learning Analytics and Knowledge",
+        "conference": "Published in Conference",
+        "full_paper": "Full Paper",
+        "short_paper": "Short Paper",
+        "poster": "Poster",
+        "open_access": "Open Access",
+        "public_access": "Public Access"
     }
 }

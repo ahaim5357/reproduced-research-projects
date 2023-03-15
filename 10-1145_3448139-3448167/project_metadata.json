@@ -49,6 +49,9 @@
             "https://orcid.org/0000-0002-3280-288X"
         ],
         "groups": [
+            "conference",
+            "full_paper",
+            "open_access",
             "lak",
             "2021"
         ],
