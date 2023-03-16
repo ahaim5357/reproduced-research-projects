@@ -1,5 +1,5 @@
 # Set global arguments
-ARG PROJECT_PATCHER_VER=0.2.0
+ARG PROJECT_PATCHER_VER=0.3.0
 
 # Get and patch project for working directory
 FROM python:3.11.2-alpine3.17 as projects
