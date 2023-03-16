@@ -56,9 +56,9 @@
             "2021"
         ],
         "links": {
-            "paper": "https://doi.org/10.1145/3448139.3448167",
-            "data": "https://drive.google.com/drive/folders/1fRhyVEetIsgRdp-B8J5seH64FCHC2HMI",
-            "materials": "https://github.com/AshishJumbo/ResponseTimeDecomposition"
+            "https://doi.org/10.1145/3448139.3448167": "paper",
+            "https://drive.google.com/drive/folders/1fRhyVEetIsgRdp-B8J5seH64FCHC2HMI": "data",
+            "https://github.com/AshishJumbo/ResponseTimeDecomposition": "materials"
         }
     }
 }

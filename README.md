@@ -87,13 +87,7 @@ Each project will specify if anything other than the default `project_patcher` i
         // ORCiD if available
         "https://orcid.org/xxxx-xxxx-xxxx-xxxx",
         // Otherwise first and last name
-        "First Last",
-        // Can be an object with associated link
-        {
-            "name": "First2 Last2",
-            // Location to website of author
-            "link": "https://website.com"
-        }
+        "First Last"
     ]
 
     // A list of tags that can be used to group the data
@@ -103,15 +97,17 @@ Each project will specify if anything other than the default `project_patcher` i
 
     // A list of links associated with the project
     "links": {
-        // Keys can either point to strings/objects or lists of strings/objects
-        "paper": "xxx",
-        "data": [
-            "xxx"
-        ],
-        "materials": [
+        // Keys are the links
+
+        // Value is a string/object tag
+        "https://example.com": "paper",
+
+        // A list of string/object tags
+        "https://example2.com": [
+            "data",
             {
-                // Link to key resource
-                "value": "xxx",
+                // Value is the key in the list
+                "value": "materials",
 
                 // A value [-1, 3] representing the accessibility of the key resource
                 // 3 Public to access and use (Default)
@@ -120,9 +116,16 @@ Each project will specify if anything other than the default `project_patcher` i
                 // 0 Cannot obtain access
                 //-1 Unconfirmed accessibility
                 "accessibility": int
+            },
+            {
+                // Value can be list of strings
+                "value": [
+                    "preregistration",
+                    "data"
+                ],
+                "accessibility": int
             }
-        ],
-        "preregistration": "xxx"
+        ]
     }
 }
 ```
@@ -142,7 +145,10 @@ Each project will specify if anything other than the default `project_patcher` i
         // ...or they can be an object with additional information
         "mac": {
             // The display name of the key
-            "name": "macOS"
+            "name": "macOS",
+
+            // A link to the resource of the key (default none)
+            "link": "https://example.com",
 
             // A list of version keys to their modified values, version number will be surrounding in parentheses
             "versions": {
@@ -157,7 +163,7 @@ Each project will specify if anything other than the default `project_patcher` i
         }
     },
     "languages": {
-        // ...
+        // Same as systems section
     }
 }
 ```
