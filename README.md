@@ -99,33 +99,24 @@ Each project will specify if anything other than the default `project_patcher` i
     "links": {
         // Keys are the links
 
-        // Value is a string/object tag
+        // Value is a string/string list/object tag
         "https://example.com": "paper",
 
-        // A list of string/object tags
-        "https://example2.com": [
-            "data",
-            {
-                // Value is the key in the list
-                "value": "materials",
+        "https://example2.com": {
+            // Value can be string or list of strings
+            "value": [
+                "materials",
+                "data"
+            ],
 
-                // A value [-1, 3] representing the accessibility of the key resource
-                // 3 Public to access and use (Default)
-                // 2 Public to view but not use
-                // 1 Private but can be requested from authors
-                // 0 Cannot obtain access
-                //-1 Unconfirmed accessibility
-                "accessibility": int
-            },
-            {
-                // Value can be list of strings
-                "value": [
-                    "preregistration",
-                    "data"
-                ],
-                "accessibility": int
-            }
-        ]
+            // A value [-1, 3] representing the accessibility of the key resource
+            // 3 Public to access and use (Default)
+            // 2 Public to view but not use
+            // 1 Private but can be requested from authors
+            // 0 Cannot obtain access
+            //-1 Unconfirmed accessibility
+            "accessibility": int
+        }
     }
 }
 ```

@@ -48,6 +48,10 @@
     },
     "groups": {
         "lak": "Learning Analytics and Knowledge",
+        "edm": "Educational Data Mining",
+        "aied": "Artificial Intelligence in Education",
+        "lats": "Learning @ Scale",
+        "journal": "Published in Journal",
         "conference": "Published in Conference",
         "full_paper": "Full Paper",
         "short_paper": "Short Paper",
