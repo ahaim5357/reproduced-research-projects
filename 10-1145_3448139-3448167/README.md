@@ -3,8 +3,15 @@
 This is a project constructor for the paper [*Examining Student Effort on Help through Response Time Decomposition*][paper] by Ashish Gurung, Anthony F. Botelho, and Neil T. Heffernan.
 
 ![](https://img.shields.io/badge/Status-Exactly%20Reproducible-success)
-![](https://img.shields.io/badge/Systems-Windows%2C%20Mac%20OSX%2C%20Linux%2C%20Docker-informational)
-![](https://img.shields.io/badge/Language-Python%203.9.5-informational)
+
+#### Systems
+![](https://img.shields.io/badge/Windows%20Native-10-informational)  
+![](https://img.shields.io/badge/macOS-High%20Sierra%20(10.13)-informational)  
+![](https://img.shields.io/badge/Debian-bullseye%20(11)-informational)  
+![](https://img.shields.io/badge/Docker-20.10%2C%2023.0-informational)
+
+#### Languages
+![](https://img.shields.io/badge/Python-3.9%2C%203.10%2C%203.11-informational)
 
 ## Project Files
 

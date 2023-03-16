@@ -3,8 +3,15 @@
 This is a project constructor and patcher for the paper [*Mathematical Creativity in Elementary School Children: General Patterns and Effects of an Incubation Break*][paper] by Stacy T. Shaw, Michelle L. Luna, Briana Rodriguez, Jan Yeh, Nancy Villalta, and Gerardo Ramirez.
 
 ![](https://img.shields.io/badge/Status-Essentially%20Reproducible-green)
-![](https://img.shields.io/badge/Systems-Windows%2C%20Mac%20OSX%2C%20Linux%2C%20Docker-informational)
-![](https://img.shields.io/badge/Language-R%204.2.2-informational)
+
+#### Systems
+![](https://img.shields.io/badge/Windows%20Native-10-informational)  
+![](https://img.shields.io/badge/macOS-High%20Sierra%20(10.13)-informational)  
+![](https://img.shields.io/badge/Debian-bullseye%20(11)-informational)  
+![](https://img.shields.io/badge/Docker-20.10%2C%2023.0-informational)
+
+#### Languages
+![](https://img.shields.io/badge/R-4.2-informational)
 
 ## Project Files
 
