@@ -99,14 +99,21 @@ Each project will specify if anything other than the default `project_patcher` i
     "links": {
         // Keys are the links
 
-        // Value is a string/string list/object tag
-        "https://example.com": "paper",
+        "https://example.com": {
+            // Name of link to refer to it by
+            "name": "Example",
 
-        "https://example2.com": {
-            // Value can be string or list of strings
-            "value": [
+            // Value can be string/object or list of strings/object
+            "tags": [
+                // No license specified means ARR default
                 "materials",
-                "data"
+                {
+                    // Tag for link
+                    "value": "data",
+
+                    // Associated license key for resource tag
+                    "license": "mit"
+                }
             ],
 
             // A value [-1, 3] representing the accessibility of the key resource
@@ -119,6 +126,13 @@ Each project will specify if anything other than the default `project_patcher` i
         }
     }
 }
+```
+
+### Extra Schema for Project Files
+
+```js
+// Within project_metadata['files']@extra
+TODO
 ```
 
 ## Extra Definitions Schema
@@ -155,6 +169,29 @@ Each project will specify if anything other than the default `project_patcher` i
     },
     "languages": {
         // Same as systems section
+    },
+    "license": {
+        "mit": {
+            // Name of license
+            "name": "MIT License",
+
+            // Short code for identifier (SPDX if available)
+            "short": "MIT",
+
+            // Link to license text for reading
+            "link": "https://example.com"
+        }
+    },
+
+    // References are generic and not for a specific section so they can only be referenced with a '#' before the key
+    "references": {
+        "xxx": {
+            // Name of reference
+            "name": "XXX",
+
+            // A short code representation of the reference
+            "short": "XXX"
+        }
     }
 }
 ```

@@ -3,22 +3,38 @@
         {
             "type": "git",
             "repository": "https://github.com/AshishJumbo/ResponseTimeDecomposition.git",
-            "commit": "2165e7e913daa9eab38b9655a472dbe4bae320f6"
+            "commit": "2165e7e913daa9eab38b9655a472dbe4bae320f6",
+            "extra": {
+                "name": "#github",
+                "license": "mit"
+            }
         },
         {
             "type": "url",
             "url": "https://drive.google.com/uc?export=download&id=1XYqsty-FpvQ6gSaJ3LKvOr3_HBFpO9Cn&confirm=t&uuid=e9832676-075d-453d-8eda-2b29ebf74201&at=ALgDtsyrNqZzddN9RzH3zX90PMSF:1678459153365",
-            "dir": "data"
+            "dir": "data",
+            "extra": {
+                "name": "RTD_data_randomsample_20K_new.csv",
+                "license": "aspdl"
+            }
         },
         {
             "type": "url",
             "url": "https://drive.google.com/uc?export=download&id=1mkxPq2XfvngxHnRP9SBC0TJs5Tu38ECk",
-            "dir": "data"
+            "dir": "data",
+            "extra": {
+                "name": "hint_infos.csv",
+                "license": "aspdl"
+            }
         },
         {
             "type": "url",
             "url": "https://drive.google.com/uc?export=download&id=1T4ADTdvS97wMwaB8oiI9zI5cZ3T3x6UQ",
-            "dir": "data"
+            "dir": "data",
+            "extra": {
+                "name": "assignment_problem_npc_infos_with_priors.csv",
+                "license": "aspdl"
+            }
         }
     ],
     "ignore": [
@@ -56,9 +72,30 @@
             "2021"
         ],
         "links": {
-            "https://doi.org/10.1145/3448139.3448167": "paper",
-            "https://drive.google.com/drive/folders/1fRhyVEetIsgRdp-B8J5seH64FCHC2HMI": "data",
-            "https://github.com/AshishJumbo/ResponseTimeDecomposition": "materials"
+            "https://doi.org/10.1145/3448139.3448167": {
+                "name": "Examining Student Effort on Help through Response Time Decomposition",
+
+                "tags": {
+                    "value": "paper",
+                    "license": "cc4"
+                }
+            },
+            "https://drive.google.com/drive/folders/1fRhyVEetIsgRdp-B8J5seH64FCHC2HMI": {
+                "name": "#drive",
+
+                "tags": {
+                    "value": "data",
+                    "license": "aspdl"
+                }
+            },
+            "https://github.com/AshishJumbo/ResponseTimeDecomposition": {
+                "name": "#github",
+
+                "tags": {
+                    "value": "materials",
+                    "license": "mit"
+                }
+            }
         }
     }
 }
