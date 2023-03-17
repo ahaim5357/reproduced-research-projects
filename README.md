@@ -84,7 +84,7 @@ Each project will specify if anything other than the default `project_patcher` i
 
     // A list of authors for the associated work
     "authors": [
-        // ORCiD if available
+        // ORCiD Link if available
         "https://orcid.org/xxxx-xxxx-xxxx-xxxx",
         // Otherwise first and last name
         "First Last"
@@ -95,8 +95,8 @@ Each project will specify if anything other than the default `project_patcher` i
         "xxx" // Can be used to group metadata
     ]
 
-    // A list of links associated with the project
-    "links": {
+    // A list of resource links associated with the project
+    "resources": {
         // Keys are the links
 
         "https://example.com": {
