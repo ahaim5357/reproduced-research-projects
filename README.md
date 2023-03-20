@@ -132,7 +132,16 @@ Each project will specify if anything other than the default `project_patcher` i
 
 ```js
 // Within project_metadata['files']@extra
-TODO
+{
+    // The name of the project file
+    // Can be a regular string ('test.csv')
+    // Or it can be a reference to something in the extra definitions ('#github')
+    "name": "#github",
+
+    // License of the project file
+    // If a key in extra definitions, will be replaced with available information
+    "license": "mit"
+}
 ```
 
 ## Extra Definitions Schema
