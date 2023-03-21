@@ -6,6 +6,7 @@
             "commit": "2165e7e913daa9eab38b9655a472dbe4bae320f6",
             "extra": {
                 "name": "#github",
+                "link": "https://github.com/AshishJumbo/ResponseTimeDecomposition",
                 "license": "mit"
             }
         },
@@ -15,6 +16,7 @@
             "dir": "data",
             "extra": {
                 "name": "RTD_data_randomsample_20K_new.csv",
+                "link": "https://drive.google.com/file/d/1XYqsty-FpvQ6gSaJ3LKvOr3_HBFpO9Cn/view?usp=sharing",
                 "license": "aspdl"
             }
         },
@@ -24,6 +26,7 @@
             "dir": "data",
             "extra": {
                 "name": "hint_infos.csv",
+                "link": "https://drive.google.com/file/d/1mkxPq2XfvngxHnRP9SBC0TJs5Tu38ECk/view?usp=sharing",
                 "license": "aspdl"
             }
         },
@@ -33,6 +36,7 @@
             "dir": "data",
             "extra": {
                 "name": "assignment_problem_npc_infos_with_priors.csv",
+                "link": "https://drive.google.com/file/d/1T4ADTdvS97wMwaB8oiI9zI5cZ3T3x6UQ/view?usp=sharing",
                 "license": "aspdl"
             }
         }
@@ -45,7 +49,7 @@
         "status": 5,
         "systems": {
             "_": [
-                "windows-10-native",
+                "windows-10",
                 "mac-10.13",
                 "debian-11",
                 "docker-20.10",

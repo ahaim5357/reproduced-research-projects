@@ -138,8 +138,13 @@ Each project will specify if anything other than the default `project_patcher` i
     // Or it can be a reference to something in the extra definitions ('#github')
     "name": "#github",
 
+    // A link to the project file location
+    // Link is optional
+    "link": "https://example.com",
+
     // License of the project file
     // If a key in extra definitions, will be replaced with available information
+    // Default is All Rights Reserved
     "license": "mit"
 }
 ```

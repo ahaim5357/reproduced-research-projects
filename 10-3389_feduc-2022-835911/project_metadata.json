@@ -5,6 +5,7 @@
             "id": "fwh6g",
             "extra": {
                 "name": "#osf",
+                "link": "https://osf.io/fwh6g/",
                 "license": "cc4"
             }
         }
@@ -14,7 +15,7 @@
         "status": 4,
         "systems": {
             "_": [
-                "windows-10-native",
+                "windows-10",
                 "mac-10.13",
                 "debian-11",
                 "docker-20.10",
