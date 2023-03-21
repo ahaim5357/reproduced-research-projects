@@ -79,26 +79,32 @@
             "https://doi.org/10.1145/3448139.3448167": {
                 "name": "Examining Student Effort on Help through Response Time Decomposition",
 
-                "tags": {
-                    "value": "paper",
-                    "license": "cc4"
-                }
+                "tags": [
+                    {
+                        "value": "paper",
+                        "license": "cc4"
+                    }
+                ]
             },
             "https://drive.google.com/drive/folders/1fRhyVEetIsgRdp-B8J5seH64FCHC2HMI": {
                 "name": "#drive",
 
-                "tags": {
-                    "value": "data",
-                    "license": "aspdl"
-                }
+                "tags": [
+                    {
+                        "value": "data",
+                        "license": "aspdl"
+                    }
+                ]
             },
             "https://github.com/AshishJumbo/ResponseTimeDecomposition": {
                 "name": "#github",
 
-                "tags": {
-                    "value": "materials",
-                    "license": "mit"
-                }
+                "tags": [
+                    {
+                        "value": "materials",
+                        "license": "mit"
+                    }
+                ]
             }
         }
     }

@@ -103,7 +103,7 @@ Each project will specify if anything other than the default `project_patcher` i
             // Name of link to refer to it by
             "name": "Example",
 
-            // Value can be string/object or list of strings/object
+            // Value can be list of strings/object
             "tags": [
                 // No license specified means ARR default
                 "materials",

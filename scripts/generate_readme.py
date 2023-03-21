@@ -5,15 +5,22 @@ definitions JSON.
 
 # Import modules
 import os
+import re
 import sys
 import json
 from typing import List, Dict, Any, Optional, Tuple, Set
+from distutils.version import LooseVersion
 from urllib.parse import quote
+from urllib import request
 
 # Define classes containing metadata
 
 class DefinitionV1:
-    """TODO: Document"""
+    """Defines a basic object with metadata using the
+    version 1 schema."""
+
+    # pylint: disable=too-few-public-methods
+    # Used as an object for clarity.
 
     def __init__(self, name: str, **kwargs) -> None:
         """The constructor for creating a definition.
@@ -83,10 +90,15 @@ class DefinitionV1:
 
 
 class ExtraDefinitionsV1:
-    """TODO: Document"""
+    """Defines a map of available definitions for an
+    object's metadata using the version 1 schema."""
+
+    # pylint: disable=too-few-public-methods
+    # Used as an object for clarity.
 
     def __init__(self, **kwargs) -> None:
-        """TODO: Document"""
+        """The constructor for creating the definition map.
+        """
 
         self.defns: Dict[str, Dict[str, DefinitionV1]] = {}
 
@@ -111,7 +123,28 @@ class ExtraDefinitionsV1:
             self.defns[group] = defn
 
     def get_definition(self, key: str, group: Optional[str] = None, **kwargs) -> Tuple[str, str]:
-        """TODO: Document"""
+        """Gets the definition and returns a tuple of the associated text
+        and any additional metadata needed to properly render.
+
+        Parameters
+        ----------
+        key : str
+            The key of the definition.
+        group : str | None (default None)
+            The group to pull the definition from. If `key` starts with
+            '#', this will be set to 'references'.
+        version : str | None (default None)
+            The version of the definition to display.
+        modifier : str | None (default None)
+            The modifier of the definition to display.
+        add_link : bool (default True)
+            When `False`, will not add the definition link.
+        
+        Returns
+        -------
+        tuple[dict[str, str], str]
+            The definition and any additional rendering metadata.
+        """
 
         # Check if key is a reference
         if key[0] == '#':
@@ -129,11 +162,32 @@ class ExtraDefinitionsV1:
             if key in type_defns else ({'name': key}, '')
 
 class SchemaInfoV1:
-    """TODO: Document"""
+    """A metadata object containing the compiled information
+    of the extra schema data for a project."""
+
+    # pylint: disable=too-many-instance-attributes
+    # Contains what is specified of the schema.
 
     @classmethod
     def __gen_badge(cls, key: str, text: str, color: str, alt: Optional[str] = None) -> str:
-        """TODO: Document"""
+        """Generates a badge / shield link for use in markdown.
+        
+        Parameters
+        ----------
+        key : str
+            The title of the badge.
+        text : str
+            The text of the badge.
+        color : str
+            The color of the badge.
+        alt : str (default `text`)
+            The alternate text if the badge cannot be displayed.
+
+        Returns
+        -------
+        str
+            The badge image for use in markdown.
+        """
         if alt is None:
             alt: str = text
         return f'![{alt}](https://img.shields.io/badge/{quote(key)}-{quote(text)}-{color})'
@@ -153,18 +207,46 @@ class SchemaInfoV1:
             -1: SchemaInfoV1.__gen_badge('Status', 'Not Tested', 'lightgrey'),
         }
 
-    def __init__(self, defns: ExtraDefinitionsV1, **kwargs) -> None:
-        """TODO: Document"""
+        # Add basic request header
+        cls.__request_headers: Dict[str, str] = {
+            'Accept': 'application/json'
+        }
 
-        # Read status and convert to badge str
-        self.status: str = SchemaInfoV1.__status_map[kwargs['status'] if 'status' in kwargs else -1]
+        # Add accessibility map
+        cls.__accessibility: Dict[int, str] = {
+             3: 'Public',
+             2: 'Public (View Only)',
+             1: 'Can Request From Authors',
+             0: 'Private',
+            -1: 'Unconfirmed Accessibility'
+        }
 
-        # Setup information for footer metadata
-        self.footers: Set[str] = set()
+        # Add italics pattern matcher
+        cls.__title_matcher: re.Pattern = re.compile(r'\[([^\[\]]+)\](.+)')
 
-        # Get file data
-        self.files: List[str] = []
-        for file in kwargs['files']: # type: Dict[str, Any]
+    @classmethod
+    def __setup_files(cls, defns: ExtraDefinitionsV1,
+            files: List[Dict[str, Any]], footers: Set[str]) -> List[str]:
+        """Compiles the 'files' into a format consumable by a README.
+        
+        Parameters
+        ----------
+        defns : ExtraDefinitionsV1
+            The available definitions for the files.
+        files: list of dict[str, any]
+            A list of files to be compiled.
+        footers: set[str]
+            A set of footers to add information that should be
+            appended at the end of the README.
+        
+        Returns
+        -------
+        list of strs
+            The compiled data representing the 'files'.
+        """
+        output: List[str] = []
+
+        for file in files: # type: Dict[str, Any]
             if 'license' not in file:
                 file['license'] = '_'
 
@@ -175,9 +257,9 @@ class SchemaInfoV1:
 
             # Add info to footers
             if file_name_defn[1]:
-                self.footers.add(file_name_defn[1])
+                footers.add(file_name_defn[1])
             if file_license_defn[1]:
-                self.footers.add(file_license_defn[1])
+                footers.add(file_license_defn[1])
 
             file_name_defn: str = file_name_defn[0]["name"]
             file_license_defn: str = file_license_defn[0]["name"]
@@ -186,17 +268,36 @@ class SchemaInfoV1:
                 if 'link' in file else file_name_defn
 
             # Build text string
-            self.files.append(
+            output.append(
                 f'* {file_str} under {file_license_defn}'
             )
+        return output
 
-
-        # Get system information
-        self.systems: List[str] = []
+    @classmethod
+    def __setup_systems(cls, defns: ExtraDefinitionsV1,
+            tested_systems: Dict[str, Any], footers: Set[str]) -> List[str]:
+        """Compiles the 'systems' into a format consumable by a README.
+        
+        Parameters
+        ----------
+        defns : ExtraDefinitionsV1
+            The available definitions for the systems.
+        tested_systems: dict[str, any]
+            A list of systems to be compiled.
+        footers: set[str]
+            A set of footers to add information that should be
+            appended at the end of the README.
+        
+        Returns
+        -------
+        list of strs
+            The compiled data representing the 'systems'.
+        """
+        output: List[str] = []
 
         # Fancy name to tuples of version number to tested versions
         system_organizer: Dict[str, Dict[str, str]] = {}
-        for suffix_modifier, systems in kwargs['systems'].items(): # type: str, List[str]
+        for suffix_modifier, systems in tested_systems.items(): # type: str, List[str]
             # Get system within suffix_modifier
             for system in systems: # type: str
                 system = system.split('-', 3)
@@ -209,7 +310,7 @@ class SchemaInfoV1:
                     version = system[1], modifier = system[2]
                 )
                 if system_defn[1]:
-                    self.footers.add(system_defn[1])
+                    footers.add(system_defn[1])
                 system_defn: dict[str, str] = system_defn[0]
 
                 # Store definitions in temporary location
@@ -228,38 +329,314 @@ class SchemaInfoV1:
 
             # Sort Versions
             organizer_versions: List[str] = list(system_versions.keys())
-            organizer_versions.sort(key = str.casefold)
+            organizer_versions.sort(key = LooseVersion)
             version_list: List[str] = []
             for organizer_version in organizer_versions:
                 version_list.append(system_versions[organizer_version])
             version_list: str = ' | '.join(version_list)
 
             # Generate system badge
-            self.systems.append(
+            output.append(
                 SchemaInfoV1.__gen_badge(organizer_key, version_list,
                     'informational', alt = f'{organizer_key}: {version_list}')
             )
+        return output
+
+    @classmethod
+    def __setup_languages(cls, defns: ExtraDefinitionsV1,
+            languages: Dict[str, List[str]]) -> List[str]:
+        """Compiles the 'languages' into a format consumable by a README.
+        
+        Parameters
+        ----------
+        defns : ExtraDefinitionsV1
+            The available definitions for the languages.
+        languages: dict[str, list[str]]
+            A list of languages to be compiled.
+        footers: set[str]
+            A set of footers to add information that should be
+            appended at the end of the README.
+        
+        Returns
+        -------
+        list of strs
+            The compiled data representing the 'languages'.
+        """
+        output: List[str] = []
+
+        # Sort keys
+        language_keys: List[str] = list(languages.keys())
+        language_keys.sort(key = str.casefold)
+        for language in language_keys: # type: str
+            lang_name: str = defns.get_definition(
+                language, group = 'languages', add_link = False
+            )[0]['name']
+
+            # Sort versions
+            versions: list[str] = languages[language]
+            versions.sort(key = LooseVersion)
+            versions: str = ' | '.join(versions)
+
+            # Output to list
+            output.append(
+                SchemaInfoV1.__gen_badge(lang_name, versions,
+                    'informational', alt = f'{lang_name}: {versions}')
+            )
+
+        return output
+
+    @classmethod
+    def __setup_authors(cls, authors: List[str]) -> List[str]:
+        """Compiles the 'authors' into a format consumable by a README.
+        
+        Parameters
+        ----------
+        authors: list[str]
+            A list of authors to be compiled.
+        
+        Returns
+        -------
+        list of strs
+            The compiled data representing the 'authors'.
+        """
+        output: List[str] = []
+
+        for author in authors: # type: str
+
+            # If author is ORCiD, pull name from there
+            if author.startswith('https://orcid.org/'):
+                req: request.Request = request.Request(author,
+                    headers = SchemaInfoV1.__request_headers)
+
+                author_data: Dict[str, Any] = None
+                with request.urlopen(req) as response:
+                    author_data = json.load(response)
+                author_data = author_data['person']['name']
+
+                author_name: str = \
+                    f'{author_data["given-names"]["value"]} {author_data["family-name"]["value"]}'
+                output.append(f'[{author_name}]({author})')
+            else:
+                output.append(author)
+
+        return output
+
+    @classmethod
+    def __setup_links(cls, defns: ExtraDefinitionsV1,
+        links: Dict[str, Any], footers: Set[str]) -> Tuple[str, List[List[str]]]:
+        """Compiles the 'links' into a format consumable by a README.
+        
+        Parameters
+        ----------
+        defns : ExtraDefinitionsV1
+            The available definitions for the links.
+        links: dict[str, any]
+            A list of links to be compiled.
+        footers: set[str]
+            A set of footers to add information that should be
+            appended at the end of the README.
+        
+        Returns
+        -------
+        tuple[str, list[list[str]]]
+            A tuple containing the title of the original project and
+            the compiled data representing the 'links'.
+        """
+
+        paper: str = ''
+        output: List[List[str]] = []
+
+        # Run through links
+        for link, metadata in links.items(): # type: str, Dict[str, Any]
+            link_data: List[str] = []
 
 
-    def generate_readme(self) -> None:
-        """TODO: Document"""
-        print('---Status---')
-        print(self.status)
-        print('---Systems---')
-        for system in self.systems:
-            print(system)
-        print('---Files---')
-        for file in self.files:
-            print(file)
-        print('---Footers---')
-        for footer in self.footers:
-            print(footer)
+            # Get name of resource
+            name: Tuple[dict[str, str], str] = defns.get_definition(
+                metadata['name'], add_link = False)
+            if name[1]:
+                footers.add(name[1])
+            name = f'[{name[0]["name"]}]({link})'
+            accessibility: int = metadata['accessibility'] \
+                if 'accessibility' in metadata else 3
+            link_data.append(
+                f'* {name} ({SchemaInfoV1.__accessibility[accessibility]})'
+            )
 
+            # Handle Tags
+            for tag in metadata['tags']:
+                # Convert string to default object
+                if isinstance(tag, str):
+                    tag: Dict[str, Any] = {
+                        'value': tag,
+                        'license': '_'
+                    }
+
+                # Treat everything as object now
+                tag_license: Tuple[dict[str, str], str] = defns.get_definition(tag['license'],
+                    group = 'license')
+                if tag_license[1]:
+                    footers.add(tag_license[1])
+                tag_name: str = tag['value']
+                link_data.append(
+                    f'    * Contains {tag_name} under {tag_license[0]["name"]}'
+                )
+
+                # Get paper name for resource
+                if not paper and tag_name == 'paper':
+                    paper = name
+
+            output.append(link_data)
+
+        return (paper, output)
+
+    def __init__(self, defns: ExtraDefinitionsV1, **kwargs) -> None:
+        """The constructor for compiling the project metadata into a
+        human-readable format.
+        
+        Parameters
+        ----------
+        defns : ExtraDefinitionsV1
+            The available definitions for the files.
+        """
+
+        # Read status and convert to badge str
+        self.status: str = SchemaInfoV1.__status_map[kwargs['status'] if 'status' in kwargs else -1]
+        # Setup information for footer metadata
+        self.footers: Set[str] = set()
+
+        # Setup metadata
+        self.files: List[str] = SchemaInfoV1.__setup_files(defns, kwargs['files'], self.footers)
+        self.systems: List[str] = SchemaInfoV1.__setup_systems(defns, kwargs['systems'],
+            self.footers)
+        self.languages: List[str] = SchemaInfoV1.__setup_languages(defns, kwargs['languages'])
+        self.authors: List[str] = SchemaInfoV1.__setup_authors(kwargs['authors'])
+        self.title, self.links = SchemaInfoV1.__setup_links(defns, kwargs['links'], self.footers)
+
+    def generate_readme(self, out_dir: str) -> None:
+        """Generates a README file in the specified directory.
+        
+        Parameters
+        ----------
+        out_dir : str
+            The directory to generate the README to.
+        """
+
+        italics_title: re.Match[str] = SchemaInfoV1.__title_matcher.match(self.title)
+        italics_title: str = f'[*{italics_title[1]}*]{italics_title[2]}'
+
+        with open(f'{out_dir}/README.md', mode = 'w', encoding = 'UTF-8') as readme:
+            print(f'# {self.title}', file = readme)
+            print('', file = readme)
+
+            print(self.status, file = readme)
+            print('', file = readme)
+
+            print('This is a project constructor ' \
+                + ('and patcher ' if os.path.exists(f'{out_dir}/_patches') else '') \
+                + f'for the paper {italics_title} by {", ".join(self.authors)}.',
+                file = readme)
+            print('', file = readme)
+
+            print('### Associated Metadata', file = readme)
+            print('', file = readme)
+
+            print('#### Tested Systems', file = readme)
+            print('', file = readme)
+            for system in self.systems:
+                print(f'{system}  ', file = readme)
+            print('', file = readme)
+
+            print('#### Languages', file = readme)
+            for language in self.languages:
+                print(f'{language}  ', file = readme)
+            print('', file = readme)
+
+            print('#### Resources', file = readme)
+            print('', file = readme)
+            for link_group in self.links:
+                for link in link_group:
+                    print(link, file = readme)
+            print('', file = readme)
+
+            print('## Project Files', file = readme)
+            print('', file = readme)
+            print('The constructor downloads the following files: ', file = readme)
+            for file in self.files:
+                print(file, file = readme)
+            print('', file = readme)
+
+            if os.path.exists(info_path := f'{out_dir}/instructions.md'):
+                with open(info_path, mode = 'r', encoding = 'UTF-8') as info:
+                    readme.write(info.read())
+                print('', file = readme)
+
+            if os.path.exists(info_path := f'{out_dir}/issues.md'):
+                with open(info_path, mode = 'r', encoding = 'UTF-8') as info:
+                    readme.write(info.read())
+                print('', file = readme)
+
+            for footer in self.footers:
+                print(footer, file = readme)
+
+def check_and_gen_readme(defns: ExtraDefinitionsV1, start_dir: str, force: bool = False) -> None:
+    """Checks to see whether a README should be generated in the current
+    directory and generates it if applicable. When a README shouldn't be
+    generated, the method checks all subdirectories instead.
+    
+    Parameters
+    ----------
+    defns : ExtraDefinitionsV1
+        The available definitions for the files.
+    start_dir : path-like
+        The directory to start recursing through to generate READMEs.
+    force : bool (default False)
+        When True, regenerates already existing READMEs.
+    """
+
+    # Check if project metadata is in current directory
+    if os.path.exists(metadata_path := f'{start_dir}/project_metadata.json'):
+        if not force and os.path.exists(f'{start_dir}/README.md'):
+            print(f'README exists in \'{start_dir}\', skipping!')
+            return
+
+        print(f'Generating README for \'{start_dir}\'.')
+
+        # Setup project metadata
+        extra_metadata: Dict[str, Any] = {}
+        with open(metadata_path, mode = 'r', encoding = 'UTF-8') as file:
+            metadata: Dict[str, Any] = json.load(file)
+
+            # Move over extra metadata
+            extra_metadata = metadata['extra']
+
+            # Add all project files extra data
+            extra_files: List[Dict[str, Any]] = []
+            for project_file in metadata['files']:
+                extra_files.append(project_file['extra'])
+            extra_metadata['files'] = extra_files
+
+        # Generate README
+        SchemaInfoV1(defns, **extra_metadata).generate_readme(start_dir)
+
+    # Otherwise, loop through subdirectories and attempt to generate readme for those
+    else:
+        for entry in os.scandir(start_dir):
+            if entry.is_dir():
+                check_and_gen_readme(defns, entry.path, force = force)
 
 # Handle main method
 
-def main() -> int:
-    """The entrypoint method for this script.
+def main(start_dir: str = os.curdir, force: bool = False) -> int:
+    """The entrypoint method for this script. Generates READMEs
+    for all projects within the specified directory.
+
+    Parameters
+    ----------
+    start_dir : path-like (default '.')
+        The directory to start recursing through to generate READMEs.
+    force : bool (default False)
+        When True, regenerates already existing READMEs.
 
     Returns
     -------
@@ -276,21 +653,17 @@ def main() -> int:
             mode = 'r', encoding = 'UTF-8') as file:
         defns = ExtraDefinitionsV1(**json.load(file))
 
-    extra_metadata: Dict[str, Any] = {}
-    ## TODO: Hardcode project_metadata in for now for testing values
-    with open('../10-1145_3448139-3448167/project_metadata.json', 'r', encoding='UTF-8') as file:
-        project_metadata = json.load(file)
-
-        # Move over extra metadata
-        extra_metadata = project_metadata['extra']
-
-        # Add all project files extra data
-        extra_files: List[Dict[str, Any]] = []
-        for project_file in project_metadata['files']:
-            extra_files.append(project_file['extra'])
-        extra_metadata['files'] = extra_files
-
-    SchemaInfoV1(defns, **extra_metadata).generate_readme()
+    check_and_gen_readme(defns, start_dir, force = force)
 
 if __name__ == '__main__':
-    sys.exit(main())
+    # Setup parameters
+    params: Dict[str, str] = {}
+    if len(sys.argv) > 1:
+        params['start_dir'] = sys.argv[1]
+        if len(sys.argv) > 2:
+            for arg in sys.argv[2:]:
+                if arg in ['-f', '--force']:
+                    params['force'] = True
+    
+    # Execute main function
+    sys.exit(main(**params))

@@ -1,23 +1,33 @@
-# [Mathematical Creativity in Elementary School Children: General Patterns and Effects of an Incubation Break][paper]
+# [Mathematical Creativity in Elementary School Children: General Patterns and Effects of an Incubation Break](https://doi.org/10.3389/feduc.2022.835911)
 
-This is a project constructor and patcher for the paper [*Mathematical Creativity in Elementary School Children: General Patterns and Effects of an Incubation Break*][paper] by Stacy T. Shaw, Michelle L. Luna, Briana Rodriguez, Jan Yeh, Nancy Villalta, and Gerardo Ramirez.
+![Essentially Reproducible](https://img.shields.io/badge/Status-Essentially%20Reproducible-green)
 
-![](https://img.shields.io/badge/Status-Essentially%20Reproducible-green)
+This is a project constructor and patcher for the paper [*Mathematical Creativity in Elementary School Children: General Patterns and Effects of an Incubation Break*](https://doi.org/10.3389/feduc.2022.835911) by [Stacy Shaw](https://orcid.org/0000-0002-4326-9937), Michelle L. Luna, Briana Rodriguez, Jan Yeh, Nancy Villalta, Gerardo Ramirez.
 
-#### Systems
-![](https://img.shields.io/badge/Windows%20Native-10-informational)  
-![](https://img.shields.io/badge/macOS-High%20Sierra%20(10.13)-informational)  
-![](https://img.shields.io/badge/Debian-bullseye%20(11)-informational)  
-![](https://img.shields.io/badge/Docker-20.10%2C%2023.0-informational)
+### Associated Metadata
+
+#### Tested Systems
+
+![Debian: bullseye (11)](https://img.shields.io/badge/Debian-bullseye%20%2811%29-informational)  
+![Docker: 20.10 | 23.0](https://img.shields.io/badge/Docker-20.10%20%7C%2023.0-informational)  
+![macOS: High Sierra (10.13)](https://img.shields.io/badge/macOS-High%20Sierra%20%2810.13%29-informational)  
+![Windows Native: 10](https://img.shields.io/badge/Windows%20Native-10-informational)  
 
 #### Languages
-![](https://img.shields.io/badge/R-4.2-informational)
+![R: 4.2](https://img.shields.io/badge/R-4.2-informational)  
+
+#### Resources
+
+* [Mathematical Creativity in Elementary School Children: General Patterns and Effects of an Incubation Break](https://doi.org/10.3389/feduc.2022.835911) (Public)
+    * Contains paper under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
+* [OSF](https://osf.io/fwh6g/) (Public)
+    * Contains data under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
+    * Contains materials under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## Project Files
 
-The constructor downloads the following files:
-
-* [Open Science Framework Project][osf] under [CC-BY-4.0][cc4]
+The constructor downloads the following files: 
+* [OSF](https://osf.io/fwh6g/) under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## Setup Instructions
 
@@ -95,6 +105,12 @@ source('child_R_code.R', echo = TRUE)
 
 You can look through the terminal output and compare the numbers within the paper. Additionally, figures are generated within the `figures` directory within `_src`.
 
+[docker]: https://www.docker.com/
+[project_patcher]: https://github.com/ahaim5357/project-patcher
+[rlang]: https://www.r-project.org/
+[renv]: https://rstudio.github.io/renv/
+[devtools]: https://www.r-project.org/nosvn/pandoc/devtools.html
+
 ## Issues
 
 * Typo in Paper: (r(209) = 0.48, p < 0.001, 95% CI [0.37, −0.58])
@@ -102,12 +118,5 @@ You can look through the terminal output and compare the numbers within the pape
 * Incorrect Rounding in Paper: (γ = 0.12, SE = 0.03, p = 0.013, R2 = 0.12)
     * Correction: (γ = 0.12, SE = 0.03, p = 0.014, R2 = 0.12)
 
-[paper]: https://doi.org/10.3389/feduc.2022.835911
-[osf]: https://osf.io/fwh6g/
-[cc4]: https://creativecommons.org/licenses/by/4.0/
-
-[docker]: https://www.docker.com/
-[project_patcher]: https://github.com/ahaim5357/project-patcher
-[rlang]: https://www.r-project.org/
-[renv]: https://rstudio.github.io/renv/
-[devtools]: https://www.r-project.org/nosvn/pandoc/devtools.html
+*[CC-BY-4.0]: Creative Commons Attribution 4.0 International
+*[OSF]: Open Science Framework

@@ -1,3 +1,5 @@
+## Setup Instructions
+
 ### Method 1: Docker
 
 This project contains the necessary files needed to setup a [docker container][docker]. Make sure you have Docker installed before attempting anything below. 
