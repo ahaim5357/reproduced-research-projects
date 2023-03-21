@@ -40,6 +40,14 @@ Each project will specify if anything other than the default `project_patcher` i
 >python3 -m pip install 'project_patcher[all]'
 >```
 
+## Generating READMEs
+
+READMEs can be generated using the [`generate_readme.py`][gen] script. This script is currently written for Python 3.9.5 and uses no external packages.
+
+* `generate_readme.py <start_dir> [--force/-f]`
+    * `start_dir`: Specify the top directory to start generating READMEs for.
+    * `--force/-f`: When specified, will regenerate any existing READMEs instead of skipping them.
+
 ## Extra Schema for Project Metadata
 
 ```js
@@ -220,5 +228,7 @@ The Patches are provided "as is", without warranty of any kind, express or impli
 
 [project_patcher]: https://pypi.org/project/project-patcher/
 [git]: https://git-scm.com/
+
+[gen]: ./scripts/generate_readme.py
 
 [usc]: https://www.copyright.gov/title17/92chap1.html#107
