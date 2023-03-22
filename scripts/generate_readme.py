@@ -107,7 +107,7 @@ class ExtraDefinitionsV1:
             kwargs.pop('schema_version')
 
         # Loops through top layer
-        for group, defined_types in kwargs.items(): # type: str, Dict[str, Dict[str, Any]]           
+        for group, defined_types in kwargs.items(): # type: str, Dict[str, Dict[str, Any]]
             defn: Dict[str, DefinitionV1] = {}
 
             # Loop through each defined type
@@ -664,6 +664,6 @@ if __name__ == '__main__':
             for arg in sys.argv[2:]:
                 if arg in ['-f', '--force']:
                     params['force'] = True
-    
+
     # Execute main function
     sys.exit(main(**params))
