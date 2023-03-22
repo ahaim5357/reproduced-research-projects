@@ -53,10 +53,12 @@ READMEs can be generated using the [`generate_readme.py`][gen] script. This scri
 ```js
 // Within project_metadata.json@extra
 {
-    // Always 1
+    // The current version of the schema to deserialize this JSON with
+    // Allowed Values: 1 (there is only one schema version)
     "schema_version": 1 
 
     // A value [-1, 5] representing the reproducibility of the work
+    // Allowed Values:
     // 5 No deviations from reported results
 	// 4 Within confidence interval deviations or typographical errors
 	// 3 Somewhat consistent with some deviations
@@ -68,17 +70,19 @@ READMEs can be generated using the [`generate_readme.py`][gen] script. This scri
 
     // A list of systems the project has been tested on
     "systems": {
-        // Default system information translated using the 'extra_definitions.json'
+        // Default system information is specified with '_'
+        // Python doesn't like empty strings in its dictionaries
         "_": [
             // Formatted as '<system>-<version>[-<modifier>]'
-            "windows-10", // Windows 10 Native
+            "windows-10-native", // Windows 10 Native
             "mac-13", // macOS Ventura
-            "debian-11", // Debian Bullseye
+            "debian-11", // Debian bullseye
         ],
 
         // System has required hardware or underlying modifier
-        "XXX":  [
-            "debian-11" // Debian Bullseye (XXX)
+        // Modifier gets appended as suffix to the system
+        "GPU":  [
+            "debian-11" // Debian bullseye (GPU)
         ]
     },
 
@@ -86,45 +90,57 @@ READMEs can be generated using the [`generate_readme.py`][gen] script. This scri
     "languages": {
         // Language key contains list of tested versions
         "r": [
-            "4.2" // R 4.2.x
+            "4.2" // R 4.2
+        ],
+        // Can be multiple lists that are mix and matchable
+        // Typically will only be one object
+        "python": [
+            "3.9", // Python 3.9
+            "3.10" // Python 3.10
         ]
     },
 
     // A list of authors for the associated work
     "authors": [
         // ORCiD if available
-        "https://orcid.org/xxxx-xxxx-xxxx-xxxx",
-        // Otherwise first and last name
-        "First Last"
+        // First and last name will be pulled from URL
+        "https://orcid.org/0000-0002-9287-4201", // Aaron Haim
+        // Otherwise first and last name can be specified manually
+        "John Smith"
     ]
 
     // A list of tags that can be used to group the data
     "groups": [
-        "xxx" // Can be used to group metadata
+        // Tags can be any string
+        "2022", // Project was released in 2022
+        "full_paper" // Project is a full conference paper
     ]
 
     // A list of links associated with the project
     "links": {
         // Keys are the links
-
-        "https://example.com": {
+        "https://doi.org/10.17605/osf.io/74bzs": { // Link to OSF Project
             // Name of link to refer to it by
-            "name": "Example",
+            "name": "Open Science Framework",
 
-            // Value can be list of strings/object
+            // Value can be list of strings or objects
             "tags": [
-                // No license specified means ARR default
+                // Strings specify the tag name in the 'value' part of the object
+                // License defaults to ARR (All rights reserved)
                 "materials",
                 {
                     // Tag for link
-                    "value": "data",
+                    // Can be any string (e.g., 'data', 'materials', 'paper', etc.)
+                    "value": "data", // Link holds data
 
                     // Associated license key for resource tag
-                    "license": "mit"
+                    // If none specified, defaults to ARR (All rights reserved)
+                    "license": "mit" // MIT License
                 }
             ],
 
             // A value [-1, 3] representing the accessibility of the key resource
+            // Allowed Values:
             // 3 Public to access and use (Default)
             // 2 Public to view but not use
             // 1 Private but can be requested from authors
@@ -143,17 +159,17 @@ READMEs can be generated using the [`generate_readme.py`][gen] script. This scri
 {
     // The name of the project file
     // Can be a regular string ('test.csv')
-    // Or it can be a reference to something in the extra definitions ('#github')
-    "name": "#github",
+    // Or it can be a reference to something in the extra definitions ('#osf')
+    "name": "#osf", // Open Science Framework
 
     // A link to the project file location
     // Link is optional
-    "link": "https://example.com",
+    "link": "https://doi.org/10.17605/osf.io/74bzs",
 
     // License of the project file
     // If a key in extra definitions, will be replaced with available information
-    // Default is All Rights Reserved
-    "license": "mit"
+    // Default is ARR (All Rights Reserved)
+    "license": "mit" // Mit License
 }
 ```
 
@@ -165,6 +181,7 @@ READMEs can be generated using the [`generate_readme.py`][gen] script. This scri
     "schema_version": 1,
 
     // A key value that can be directly associated with an object in the extra section, each section can define their own format
+    // Currently used values are 'systems', 'languages', 'groups', 'license', and 'references
     "systems": {
         // Keys can either map to a value indicating the display name
         "docker": "Docker",
@@ -174,8 +191,13 @@ READMEs can be generated using the [`generate_readme.py`][gen] script. This scri
             // The display name of the key
             "name": "macOS",
 
-            // A link to the resource of the key (default none)
-            "link": "https://example.com",
+            // A shortened version of the display name that is identifiable
+            // If specified, will have the display name hidden as a tooltip
+            "short": "mac"
+
+            // A link to the resource of the key
+            // Links are optional
+            "link": "https://www.apple.com/macos/",
 
             // A list of version keys to their modified values, version number will be surrounding in parentheses
             "versions": {
@@ -185,35 +207,15 @@ READMEs can be generated using the [`generate_readme.py`][gen] script. This scri
             // A list of modifiers to specify as a suffix for the system
             "modifiers": {
                 "_": "Native" // Default name is macOS Native
-                "xxx": "XXX" // macOS XXX
+                "brew": "Homebrew" // macOS Homebrew
             }
         }
-    },
-    "languages": {
-        // Same as systems section
-    },
-    "license": {
-        "mit": {
-            // Name of license
-            "name": "MIT License",
-
-            // Short code for identifier (SPDX if available)
-            "short": "MIT",
-
-            // Link to license text for reading
-            "link": "https://example.com"
-        }
-    },
+    }
 
     // References are generic and not for a specific section so they can only be referenced with a '#' before the key
+    // e.g., '#osf', '#github', '#drive'
     "references": {
-        "xxx": {
-            // Name of reference
-            "name": "XXX",
-
-            // A short code representation of the reference
-            "short": "XXX"
-        }
+        // Same as above
     }
 }
 ```
