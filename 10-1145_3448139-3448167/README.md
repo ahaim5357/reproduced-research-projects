@@ -98,6 +98,6 @@ You can look through the terminal output and compare the numbers within the pape
 [python]: https://www.python.org/
 
 *[ASSIST-PDL-0.1]: ASSISTments Public Data License v0.1
-*[CC-BY-4.0]: Creative Commons Attribution 4.0 International
 *[GitHub]: GitHub Repository
+*[CC-BY-4.0]: Creative Commons Attribution 4.0 International
 *[MIT]: MIT License

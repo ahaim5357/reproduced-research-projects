@@ -222,7 +222,7 @@ class SchemaInfoV1:
         }
 
         # Add italics pattern matcher
-        cls.__title_matcher: re.Pattern = re.compile(r'\[([^\[\]]+)\](.+)')
+        cls.__title_matcher: re.Pattern = re.compile(r'^\[(.+)\](\([^\[\]]+\))$')
 
     @classmethod
     def __setup_files(cls, defns: ExtraDefinitionsV1,
