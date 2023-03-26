@@ -1,0 +1,96 @@
+{
+    "schema_version": 1,
+    "systems": {
+        "windows": {
+            "name": "Windows",
+            "modifiers": {
+                "_": "Native",
+                "wsl2": "WSL2"
+            }
+        },
+        "mac": {
+            "name": "macOS",
+            "versions": {
+                "10.6": "Snow Leopard",
+                "10.7": "Lion",
+                "10.8": "Mountain Lion",
+                "10.9": "Mavericks",
+                "10.10": "Yosemite",
+                "10.11": "El Capitan",
+                "10.12": "Sierra",
+                "10.13": "High Sierra",
+                "10.14": "Mojave",
+                "10.15": "Catalina",
+                "11": "Big Sur",
+                "12": "Monterey",
+                "13": "Ventura"
+            }
+        },
+        "debian": {
+            "name": "Debian",
+            "versions": {
+                "9": "stretch",
+                "10": "buster",
+                "11": "bullseye",
+                "12": "bookworm"
+            }
+        },
+        "docker": {
+            "name": "Docker",
+            "modifiers": {
+                "nvidia": "NVIDIA"
+            }
+        }
+    },
+    "languages": {
+        "python": "Python",
+        "r": "R"
+    },
+    "groups": {
+        "lak": "Learning Analytics and Knowledge",
+        "edm": "Educational Data Mining",
+        "aied": "Artificial Intelligence in Education",
+        "lats": "Learning @ Scale",
+        "journal": "Published in Journal",
+        "conference": "Published in Conference",
+        "full_paper": "Full Paper",
+        "short_paper": "Short Paper",
+        "poster": "Poster",
+        "open_access": "Open Access",
+        "public_access": "Public Access"
+    },
+    "license": {
+        "_": {
+            "name": "All Rights Reserved",
+            "short": "ARR"
+        },
+        "mit": {
+            "name": "MIT License",
+            "short": "MIT",
+            "link": "https://opensource.org/license/mit/"
+        },
+        "cc4": {
+            "name": "Creative Commons Attribution 4.0 International",
+            "short": "CC-BY-4.0",
+            "link": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "aspdl": {
+            "name": "ASSISTments Public Data License v0.1",
+            "short": "ASSIST-PDL-0.1",
+            "link": "https://docs.google.com/document/d/1qUOWAgdXtBk7vk2ogUZDe4GXGDO-byAx5RJclRJFyDo/edit#heading=h.5iu406k5nt8u"
+        }
+    },
+    "references": {
+        "osf": {
+            "name": "Open Science Framework",
+            "short": "OSF"
+        },
+        "github": {
+            "name": "GitHub Repository",
+            "short": "GitHub"
+        },
+        "drive": {
+            "name": "Google Drive"
+        }
+    }
+}

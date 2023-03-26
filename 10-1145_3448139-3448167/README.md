@@ -1,19 +1,37 @@
-# [Examining Student Effort on Help through Response Time Decomposition][paper]
+# [Examining Student Effort on Help through Response Time Decomposition](https://doi.org/10.1145/3448139.3448167)
 
-This is a project constructor for the paper [*Examining Student Effort on Help through Response Time Decomposition*][paper] by Ashish Gurung, Anthony F. Botelho, and Neil T. Heffernan.
+![Exactly Reproducible](https://img.shields.io/badge/Status-Exactly%20Reproducible-success)
 
-![](https://img.shields.io/badge/Status-Exactly%20Reproducible-success)
-![](https://img.shields.io/badge/Systems-Windows%2C%20Mac%20OSX%2C%20Linux%2C%20Docker-informational)
-![](https://img.shields.io/badge/Language-Python%203.9.5-informational)
+This is a project constructor for the paper [*Examining Student Effort on Help through Response Time Decomposition*](https://doi.org/10.1145/3448139.3448167) by [Ashish Gurung](https://orcid.org/0000-0001-7003-1476), [Anthony Botelho](https://orcid.org/0000-0002-7373-4959), [Neil Heffernan](https://orcid.org/0000-0002-3280-288X).
+
+### Associated Metadata
+
+#### Tested Systems
+
+![Debian: bullseye (11)](https://img.shields.io/badge/Debian-bullseye%20%2811%29-informational)  
+![Docker: 20.10 | 23.0](https://img.shields.io/badge/Docker-20.10%20%7C%2023.0-informational)  
+![macOS: High Sierra (10.13)](https://img.shields.io/badge/macOS-High%20Sierra%20%2810.13%29-informational)  
+![Windows Native: 10](https://img.shields.io/badge/Windows%20Native-10-informational)  
+
+#### Languages
+![Python: 3.9 | 3.10 | 3.11](https://img.shields.io/badge/Python-3.9%20%7C%203.10%20%7C%203.11-informational)  
+
+#### Resources
+
+* [Examining Student Effort on Help through Response Time Decomposition](https://doi.org/10.1145/3448139.3448167) (Public)
+    * Contains paper under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
+* [Google Drive](https://drive.google.com/drive/folders/1fRhyVEetIsgRdp-B8J5seH64FCHC2HMI) (Public)
+    * Contains data under [ASSIST-PDL-0.1](https://docs.google.com/document/d/1qUOWAgdXtBk7vk2ogUZDe4GXGDO-byAx5RJclRJFyDo/edit#heading=h.5iu406k5nt8u)
+* [GitHub](https://github.com/AshishJumbo/ResponseTimeDecomposition) (Public)
+    * Contains materials under [MIT](https://opensource.org/license/mit/)
 
 ## Project Files
 
-The constructor downloads the following files:
-
-* [GitHub Repository][github] under the [MIT License][mit]
-* [RTD_data_randomsample_20K_new.csv][rtd] under the [ASSISTments Public Data License v0.1][apdl]
-* [hint_infos.csv][hi] under the [ASSISTments Public Data License v0.1][apdl]
-* [assignment_problem_npc_infos_with_priors.csv][apniwp] under the [ASSISTments Public Data License v0.1][apdl]
+The constructor downloads the following files: 
+* [GitHub](https://github.com/AshishJumbo/ResponseTimeDecomposition) under [MIT](https://opensource.org/license/mit/)
+* [RTD_data_randomsample_20K_new.csv](https://drive.google.com/file/d/1XYqsty-FpvQ6gSaJ3LKvOr3_HBFpO9Cn/view?usp=sharing) under [ASSIST-PDL-0.1](https://docs.google.com/document/d/1qUOWAgdXtBk7vk2ogUZDe4GXGDO-byAx5RJclRJFyDo/edit#heading=h.5iu406k5nt8u)
+* [hint_infos.csv](https://drive.google.com/file/d/1mkxPq2XfvngxHnRP9SBC0TJs5Tu38ECk/view?usp=sharing) under [ASSIST-PDL-0.1](https://docs.google.com/document/d/1qUOWAgdXtBk7vk2ogUZDe4GXGDO-byAx5RJclRJFyDo/edit#heading=h.5iu406k5nt8u)
+* [assignment_problem_npc_infos_with_priors.csv](https://drive.google.com/file/d/1T4ADTdvS97wMwaB8oiI9zI5cZ3T3x6UQ/view?usp=sharing) under [ASSIST-PDL-0.1](https://docs.google.com/document/d/1qUOWAgdXtBk7vk2ogUZDe4GXGDO-byAx5RJclRJFyDo/edit#heading=h.5iu406k5nt8u)
 
 ## Setup Instructions
 
@@ -75,13 +93,11 @@ python3 paper_results_replication_file.py
 
 You can look through the terminal output and compare the numbers within the paper. Additionally, the figures are generated within the `images/plots` directory within `_src`.
 
-[paper]: https://doi.org/10.1145/3448139.3448167
-[github]: https://github.com/AshishJumbo/ResponseTimeDecomposition
-[mit]: https://github.com/AshishJumbo/ResponseTimeDecomposition/blob/2165e7e913daa9eab38b9655a472dbe4bae320f6/LICENSE
-[rtd]: https://drive.google.com/file/d/1XYqsty-FpvQ6gSaJ3LKvOr3_HBFpO9Cn/view?usp=sharing
-[hi]: https://drive.google.com/file/d/1mkxPq2XfvngxHnRP9SBC0TJs5Tu38ECk/view?usp=sharing
-[apniwp]: https://drive.google.com/file/d/1T4ADTdvS97wMwaB8oiI9zI5cZ3T3x6UQ/view?usp=sharing
-[apdl]: https://github.com/AshishJumbo/ResponseTimeDecomposition/2165e7e913daa9eab38b9655a472dbe4bae320f6/master/DATA-LICENSE
-
 [docker]: https://www.docker.com/
+[project_patcher]: https://github.com/ahaim5357/project-patcher
 [python]: https://www.python.org/
+
+*[ASSIST-PDL-0.1]: ASSISTments Public Data License v0.1
+*[GitHub]: GitHub Repository
+*[CC-BY-4.0]: Creative Commons Attribution 4.0 International
+*[MIT]: MIT License

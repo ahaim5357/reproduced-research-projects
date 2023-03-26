@@ -2,7 +2,67 @@
     "files": [
         {
             "type": "osf",
-            "id": "fwh6g"
+            "id": "fwh6g",
+            "extra": {
+                "name": "#osf",
+                "link": "https://osf.io/fwh6g/",
+                "license": "cc4"
+            }
         }
-    ]
+    ],
+    "extra": {
+        "schema_version": 1,
+        "status": 4,
+        "systems": {
+            "_": [
+                "windows-10",
+                "mac-10.13",
+                "debian-11",
+                "docker-20.10",
+                "docker-23.0"
+            ]
+        },
+        "languages": {
+            "r": [
+                "4.2"
+            ]
+        },
+        "authors": [
+            "https://orcid.org/0000-0002-4326-9937",
+            "Michelle L. Luna",
+            "Briana Rodriguez",
+            "Jan Yeh",
+            "Nancy Villalta",
+            "Gerardo Ramirez"
+        ],
+        "groups": [
+            "2022"
+        ],
+        "links": {
+            "https://doi.org/10.3389/feduc.2022.835911": {
+                "name": "Mathematical Creativity in Elementary School Children: General Patterns and Effects of an Incubation Break",
+
+                "tags": [
+                    {
+                        "value": "paper",
+                        "license": "cc4"
+                    }
+                ]
+            },
+            "https://osf.io/fwh6g/": {
+                "name": "#osf",
+                
+                "tags": [
+                    {
+                        "value": "data",
+                        "license": "cc4"
+                    },
+                    {
+                        "value": "materials",
+                        "license": "cc4"
+                    }
+                ]
+            }
+        }
+    }
 }

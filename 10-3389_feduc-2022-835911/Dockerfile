@@ -1,5 +1,5 @@
 # Set global arguments
-ARG PROJECT_PATCHER_VER=0.1.0
+ARG PROJECT_PATCHER_VER=0.3.0
 ARG RENV_VER=0.16.0
 
 # Get and patch project for working directory
@@ -19,7 +19,7 @@ COPY . ./
 
 ## Install project_patcher and run
 RUN python3 -m pip install project-patcher==${PROJECT_PATCHER_VER}
-RUN project_patcher init
+RUN project_patcher src
 
 ## Setup project specific info
 FROM r-base:4.2.2

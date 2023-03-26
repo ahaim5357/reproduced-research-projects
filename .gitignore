@@ -4,3 +4,6 @@ _src
 
 # Ignore environments
 _env
+
+# Ignore IDEs
+.vscode

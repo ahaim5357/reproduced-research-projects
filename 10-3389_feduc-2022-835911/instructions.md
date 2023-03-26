@@ -1,34 +1,3 @@
-# [Mathematical Creativity in Elementary School Children: General Patterns and Effects of an Incubation Break](https://doi.org/10.3389/feduc.2022.835911)
-
-![Essentially Reproducible](https://img.shields.io/badge/Status-Essentially%20Reproducible-green)
-
-This is a project constructor and patcher for the paper [*Mathematical Creativity in Elementary School Children: General Patterns and Effects of an Incubation Break*](https://doi.org/10.3389/feduc.2022.835911) by [Stacy Shaw](https://orcid.org/0000-0002-4326-9937), Michelle L. Luna, Briana Rodriguez, Jan Yeh, Nancy Villalta, Gerardo Ramirez.
-
-### Associated Metadata
-
-#### Tested Systems
-
-![Debian: bullseye (11)](https://img.shields.io/badge/Debian-bullseye%20%2811%29-informational)  
-![Docker: 20.10 | 23.0](https://img.shields.io/badge/Docker-20.10%20%7C%2023.0-informational)  
-![macOS: High Sierra (10.13)](https://img.shields.io/badge/macOS-High%20Sierra%20%2810.13%29-informational)  
-![Windows Native: 10](https://img.shields.io/badge/Windows%20Native-10-informational)  
-
-#### Languages
-![R: 4.2](https://img.shields.io/badge/R-4.2-informational)  
-
-#### Resources
-
-* [Mathematical Creativity in Elementary School Children: General Patterns and Effects of an Incubation Break](https://doi.org/10.3389/feduc.2022.835911) (Public)
-    * Contains paper under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
-* [OSF](https://osf.io/fwh6g/) (Public)
-    * Contains data under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
-    * Contains materials under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
-
-## Project Files
-
-The constructor downloads the following files: 
-* [OSF](https://osf.io/fwh6g/) under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
-
 ## Setup Instructions
 
 ### Method 1: Docker
@@ -110,13 +79,3 @@ You can look through the terminal output and compare the numbers within the pape
 [rlang]: https://www.r-project.org/
 [renv]: https://rstudio.github.io/renv/
 [devtools]: https://www.r-project.org/nosvn/pandoc/devtools.html
-
-## Issues
-
-* Typo in Paper: (r(209) = 0.48, p < 0.001, 95% CI [0.37, −0.58])
-    * Correction: (r(209) = 0.48, p < 0.001, 95% CI [0.37, 0.58])
-* Incorrect Rounding in Paper: (γ = 0.12, SE = 0.03, p = 0.013, R2 = 0.12)
-    * Correction: (γ = 0.12, SE = 0.03, p = 0.014, R2 = 0.12)
-
-*[CC-BY-4.0]: Creative Commons Attribution 4.0 International
-*[OSF]: Open Science Framework

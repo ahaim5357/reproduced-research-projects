@@ -1,5 +1,5 @@
 # Set global arguments
-ARG PROJECT_PATCHER_VER=0.1.0
+ARG PROJECT_PATCHER_VER=0.3.0
 
 # Get and patch project for working directory
 FROM python:3.11.2-alpine3.17 as projects
@@ -22,7 +22,7 @@ RUN apk add git
 
 ## Install project_patcher and run
 RUN python3 -m pip install "project-patcher[git]==${PROJECT_PATCHER_VER}"
-RUN project_patcher init
+RUN project_patcher src
 
 ## Setup project specific info
 FROM python:3.9.5-slim-buster
