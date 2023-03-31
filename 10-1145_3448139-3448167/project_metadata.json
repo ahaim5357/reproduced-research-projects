@@ -51,6 +51,7 @@
             "_": [
                 "windows-10",
                 "mac-10.13",
+                "debian-10",
                 "debian-11",
                 "docker-20.10",
                 "docker-23.0"

@@ -7,3 +7,6 @@ _env
 
 # Ignore IDEs
 .vscode
+
+# Ignore caches
+__pycache__

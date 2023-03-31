@@ -201,7 +201,7 @@ class SchemaInfoV1:
              5: SchemaInfoV1.__gen_badge('Status', 'Exactly Reproducible', 'success'),
              4: SchemaInfoV1.__gen_badge('Status', 'Essentially Reproducible', 'green'),
              3: SchemaInfoV1.__gen_badge('Status', 'Partially Reproducible', 'yellow'),
-             2: SchemaInfoV1.__gen_badge('Status', 'Mostly Reproducible', 'orange'),
+             2: SchemaInfoV1.__gen_badge('Status', 'Mostly Not Reproducible', 'orange'),
              1: SchemaInfoV1.__gen_badge('Status', 'Not at All Reproducible', 'red'),
              0: SchemaInfoV1.__gen_badge('Status', 'Cannot Attempt Reproducibility', 'ad7aff'),
             -1: SchemaInfoV1.__gen_badge('Status', 'Not Tested', 'lightgrey'),

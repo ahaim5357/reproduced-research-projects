@@ -1,0 +1,62 @@
+{
+    "files": [
+        {
+            "type": "git",
+            "repository": "https://github.com/ahaim5357/aied2022_pquizsyn.git",
+            "commit": "816f5fa4709e59b2b52a86858311c86c8321b772",
+            "extra": {
+                "name": "#github_cloned",
+                "link": "https://github.com/ahaim5357/aied2022_pquizsyn"
+            }
+        }
+    ],
+    "ignore": [
+        "data*"
+    ],
+    "extra": {
+        "schema_version": 1,
+        "status": 2,
+        "systems": {
+            "_": [
+                "debian-9",
+                "debian-11",
+                "docker-20.10",
+                "docker-23.0"
+            ]
+        },
+        "languages": {
+            "python": [
+                "3.7"
+            ]
+        },
+        "authors": [
+            "Ahana Ghosh",
+            "https://orcid.org/0000-0002-2592-0108",
+            "https://orcid.org/0000-0002-7769-3090",
+            "https://orcid.org/0000-0001-9922-0668"
+        ],
+        "groups": [
+            "conference",
+            "full_paper",
+            "aied",
+            "2022"
+        ],
+        "links": {
+            "https://doi.org/10.1007/978-3-031-11644-5_3": {
+                "name": "Adaptive Scaffolding in Block-Based Programming via Synthesizing New Tasks as Pop Quizzes",
+
+                "tags": [
+                    "paper"
+                ]
+            },
+            "https://github.com/machine-teaching-group/aied2022_pquizsyn": {
+                "name": "#github",
+
+                "tags": [
+                    "data",
+                    "materials"
+                ]
+            }
+        }
+    }
+}

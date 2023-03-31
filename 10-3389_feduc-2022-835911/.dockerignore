@@ -1,5 +1,8 @@
 **/_clean
+**/_env
 **/_src
 **/.dockerignore
 **/Dockerfile*
 **/README.md
+**/instructions.md
+**/issues.md
