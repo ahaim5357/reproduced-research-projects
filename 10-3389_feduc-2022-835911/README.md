@@ -8,7 +8,7 @@ This is a project constructor and patcher for the paper [*Mathematical Creativit
 
 #### Tested Systems
 
-![Debian: bullseye (11)](https://img.shields.io/badge/Debian-bullseye%20%2811%29-informational)  
+![Debian: bullseye (11) | bookworm (12)](https://img.shields.io/badge/Debian-bullseye%20%2811%29%20%7C%20bookworm%20%2812%29-informational)  
 ![Docker: 20.10 | 23.0](https://img.shields.io/badge/Docker-20.10%20%7C%2023.0-informational)  
 ![macOS: High Sierra (10.13)](https://img.shields.io/badge/macOS-High%20Sierra%20%2810.13%29-informational)  
 ![Windows Native: 10](https://img.shields.io/badge/Windows%20Native-10-informational)  

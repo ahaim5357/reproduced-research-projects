@@ -31,7 +31,7 @@ sh run_demos_and_synthetics.sh
 You can look through the terminal output and compare the numbers within the paper. To view the figures on the local machine, you can copy them to the volume via:
 
 ```sh
-cp -R ../data /volume
+cp -R ./data /volume
 ```
 
 ### Method 2: Local Setup

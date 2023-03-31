@@ -1,6 +1,6 @@
 # [Adaptive Scaffolding in Block-Based Programming via Synthesizing New Tasks as Pop Quizzes](https://doi.org/10.1007/978-3-031-11644-5_3)
 
-![Partially Reproducible](https://img.shields.io/badge/Status-Partially%20Reproducible-yellow)
+![Mostly Not Reproducible](https://img.shields.io/badge/Status-Mostly%20Not%20Reproducible-orange)
 
 This is a project constructor for the paper [*Adaptive Scaffolding in Block-Based Programming via Synthesizing New Tasks as Pop Quizzes*](https://doi.org/10.1007/978-3-031-11644-5_3) by Ahana Ghosh, [Sebastian Tschiatschek](https://orcid.org/0000-0002-2592-0108), [Sam Devlin](https://orcid.org/0000-0002-7769-3090), [Adish Singla](https://orcid.org/0000-0001-9922-0668).
 
@@ -8,7 +8,8 @@ This is a project constructor for the paper [*Adaptive Scaffolding in Block-Base
 
 #### Tested Systems
 
-![Debian: bullseye (11)](https://img.shields.io/badge/Debian-bullseye%20%2811%29-informational)  
+![Debian: stretch (9) | bullseye (11)](https://img.shields.io/badge/Debian-stretch%20%289%29%20%7C%20bullseye%20%2811%29-informational)  
+![Docker: 20.10 | 23.0](https://img.shields.io/badge/Docker-20.10%20%7C%2023.0-informational)  
 
 #### Languages
 ![Python: 3.7](https://img.shields.io/badge/Python-3.7-informational)  
@@ -48,43 +49,65 @@ docker run -itv <local_directory>:/volume <image_name> sh
 
 A `volume` directory will be created within the image which will link to the `local_directory` specified. You can specify the current directory of execution via `${PWD}`.
 
-> We are loading into the terminal instead of into Python to copy any generated figures onto the local machine as they cannot otherwise be easily viewed.
+> We are loading into the terminal instead of into the shell script to copy any generated figures onto the local machine as they cannot otherwise be easily viewed.
 
-Once in the docker terminal, you can run the Python script via:
+Once in the docker terminal, you can run the shell script via:
 
 ```sh
-python3 paper_results_replication_file.py
+sh run_demos_and_synthetics.sh
 ```
 
 You can look through the terminal output and compare the numbers within the paper. To view the figures on the local machine, you can copy them to the volume via:
 
 ```sh
-cp -R ../images /volume
+cp -R ./data /volume
 ```
 
 ### Method 2: Local Setup
 
 This project uses the Python package `project_patcher[git]` to setup and fix any issues in the codebase. For instructions on how to download and generate the project from this directory, see the [`project_patcher`][project_patcher] repository.
 
-The following instructions have been reproduced using [Python][python] 3.9.5. This project does not make any guarantees that this will work outside of the specified version. Make sure you have Python, along with gcc for Cython, before attempting anything below.
+The following instructions have been reproduced using [Python][python] 3.7.3. This project does not make any guarantees that this will work outside of the specified version. Make sure you have Python, along with gcc for Cython, before attempting anything below.
 
-First, you will need to navigate to the generated `_src` directory. You will need to install the required dependencies into the global Python instance or a virtual environment via:
+> You will be unable to execute the code on Windows Native. It expects libraries which are only easily installable through Cygwin or Mingw. Additionally, any non-computationally powerful machine won't be able to run the code. One of the substructures in the intervention takes approximately 2-3 days to execute.
+
+First, you will need to download the following libraries using your associated package manager or through the binaries:
+
+* [gcc](https://gcc.gnu.org/)
+* g++
+* [TeX Live](https://www.tug.org/texlive/)
+* texlive-latex-extra
+* [ImageMagick](https://imagemagick.org/)
+
+> On the subject of ImageMagick, the conversion to the PDF may fail on newer versions. This is likely due to a preventative measure ImageMagick took when a security vulnerability was discovered in GhostScript, one of its dependencies. If you are using GhostScript 9.24 or above (check via `gs --version`), then you can comment out the line in question within `/etc/ImageMagick-<ver>/policy.xml` to allow the conversion to occur. `<ver>` in this case is the version of ImageMagick downloaded (currently 6 as of March 2023).
+> ```xml
+> <policymap>
+>   <!-- ... -->
+>   <!-- disable ghostscript format types -->
+>   <policy domain="coder" rights="none" pattern="PS" />
+>   <policy domain="coder" rights="none" pattern="PS2" />
+>   <policy domain="coder" rights="none" pattern="PS3" />
+>   <policy domain="coder" rights="none" pattern="EPS" />
+> <!--  <policy domain="coder" rights="none" pattern="PDF" /> -->
+>   <policy domain="coder" rights="none" pattern="XPS" />
+> </policymap>
+> ```
+
+Then, you will need to navigate to the generated `_src` directory. You will need to install the required dependencies into the global Python instance or a virtual environment via:
 
 ```sh
 python3 -m pip install -r requirements.txt
 ```
 
-> python3 is replaced with `py` on Windows machines. Additionally, the `python3 -m` prefix is unnecessary if `pip` is properly added to the path.
-
-After installing the required dependencies, navigate to the `analysis` folder and run the `paper_results_replication_file.py` script via:
+After installing the required dependencies, navigate to the project directory and run the `run_demos_and_synthetics.sh` script via:
 
 ```sh
-python3 paper_results_replication_file.py
+sh run_demos_and_synthetics.sh
 ```
 
-> Your terminal should be within the `analysis` folder, or the code will fail to execute.
+> As Windows Native is not supported, a bash script can be typically run across any machine or unix subsystem. If not, you can run the methods inside the script manually.
 
-You can look through the terminal output and compare the numbers within the paper. Additionally, the figures are generated within the `images/plots` directory within `_src`.
+You can look through the terminal output and compare the numbers within the paper. Additionally, the figures are generated within the `data` directory within `_src`.
 
 [docker]: https://www.docker.com/
 [project_patcher]: https://github.com/ahaim5357/project-patcher
@@ -92,10 +115,10 @@ You can look through the terminal output and compare the numbers within the pape
 
 ## Issues
 
-* Typo in Paper: (r(209) = 0.48, p < 0.001, 95% CI [0.37, −0.58])
-    * Correction: (r(209) = 0.48, p < 0.001, 95% CI [0.37, 0.58])
-* Incorrect Rounding in Paper: (γ = 0.12, SE = 0.03, p = 0.013, R2 = 0.12)
-    * Correction: (γ = 0.12, SE = 0.03, p = 0.014, R2 = 0.12)
+* As stated in the repository, the randomness is not seeded, so TQuiz and CQuiz is not recoverable.
+* None of the other images or data is recoverable as well the generated quizzes could change the sample size as they were random and that some data was collected directly from users which was not included, likely due to personally identifiable information.
+
+The status is set to 'Mostly Not Reproducible' as the only recoverable results are those used in the demos. We have no way to verify whether the generated data for the intervention were the same used in the experiment, although we did purposely make it so the script would generate the data regardless.
 
 *[GitHub]: GitHub Repository
 *[Cloned GitHub]: Cloned GitHub Repository
