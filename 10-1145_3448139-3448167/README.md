@@ -8,7 +8,7 @@ This is a project constructor for the paper [*Examining Student Effort on Help t
 
 #### Tested Systems
 
-![Debian: bullseye (11)](https://img.shields.io/badge/Debian-bullseye%20%2811%29-informational)  
+![Debian: buster (10) | bullseye (11)](https://img.shields.io/badge/Debian-buster%20%2810%29%20%7C%20bullseye%20%2811%29-informational)  
 ![Docker: 20.10 | 23.0](https://img.shields.io/badge/Docker-20.10%20%7C%2023.0-informational)  
 ![macOS: High Sierra (10.13)](https://img.shields.io/badge/macOS-High%20Sierra%20%2810.13%29-informational)  
 ![Windows Native: 10](https://img.shields.io/badge/Windows%20Native-10-informational)  
@@ -97,7 +97,7 @@ You can look through the terminal output and compare the numbers within the pape
 [project_patcher]: https://github.com/ahaim5357/project-patcher
 [python]: https://www.python.org/
 
-*[ASSIST-PDL-0.1]: ASSISTments Public Data License v0.1
-*[GitHub]: GitHub Repository
 *[CC-BY-4.0]: Creative Commons Attribution 4.0 International
+*[GitHub]: GitHub Repository
+*[ASSIST-PDL-0.1]: ASSISTments Public Data License v0.1
 *[MIT]: MIT License

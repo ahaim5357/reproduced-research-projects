@@ -89,6 +89,10 @@
             "name": "GitHub Repository",
             "short": "GitHub"
         },
+        "github_cloned": {
+            "name": "Cloned GitHub Repository",
+            "short": "Cloned GitHub"
+        },
         "drive": {
             "name": "Google Drive"
         }
