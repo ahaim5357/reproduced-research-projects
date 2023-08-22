@@ -1,6 +1,6 @@
-**/_clean
-**/_env
-**/_src
+**/clean
+**/env
+**/src
 **/.dockerignore
 **/Dockerfile*
 **/README.md
