@@ -1,9 +1,9 @@
 # Ignore clean and src directories
-_clean
-_src
+/clean
+/src
 
 # Ignore environments
-_env
+/env
 
 # Ignore IDEs
 .vscode

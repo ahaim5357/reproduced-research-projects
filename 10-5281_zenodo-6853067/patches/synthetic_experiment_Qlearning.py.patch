@@ -1,0 +1,26 @@
+--- synthetic_experiment_Qlearning.py
++++ synthetic_experiment_Qlearning.py	2023-08-22 11:25:20.625940
+@@ -279,6 +279,7 @@
+ import sparfae
+ 
+ os.makedirs('synthetic_results', exist_ok=True)
++os.makedirs('images', exist_ok=True)
+ 
+ # iterate over the conditions
+ for condition in range(1, 4):
+@@ -421,6 +422,7 @@
+         elif condition == 3:
+             plt.legend(method_labels)
+         plt.ylim(0, max_levels[eva])
++plt.savefig('images/synthetic_results_hyperparameters.png')
+ plt.show()
+ 
+ 
+@@ -479,6 +481,7 @@
+                 plt.ylim(10 ** (np.floor(np.log10(min_level))), max_levels[eva])
+             else:
+                 plt.ylim(0, max_levels[eva])
++    plt.savefig('images/synthetic_results_%s.png' % exp_param_label)
+     plt.show()
+ 
+ 
