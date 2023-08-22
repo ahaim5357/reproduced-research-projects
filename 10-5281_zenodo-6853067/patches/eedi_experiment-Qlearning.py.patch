@@ -1,0 +1,43 @@
+--- eedi_experiment-Qlearning.py
++++ eedi_experiment-Qlearning.py	2023-08-22 11:25:20.625940
+@@ -5,7 +5,7 @@
+ 
+ # In[3]:
+ 
+-
++import os
+ import numpy as np
+ import csv
+ from tqdm import tqdm
+@@ -25,6 +25,7 @@
+         answer_metadata[int(row[0])] = row[1:]
+ print('successfully loaded metadata for %d responses' % len(answer_metadata))
+ 
++os.makedirs('images', exist_ok=True)
+ 
+ # In[4]:
+ 
+@@ -162,6 +163,7 @@
+ plt.xlabel('quiz index')
+ plt.ylabel('#')
+ plt.legend(['no. of items', 'no. of students [100s]', 'no. of skills'])
++plt.savefig('images/learning_quiz_details.png')
+ plt.show()
+ 
+ 
+@@ -186,6 +188,7 @@
+ plt.xlabel('num_items')
+ plt.ylabel('fraction of missing data')
+ plt.title('missing data in each quiz')
++plt.savefig('images/learning_missing.png')
+ plt.show()
+ 
+ 
+@@ -457,6 +460,7 @@
+     plt.xlabel('num skills')
+     plt.ylabel('test AUC')
+     plt.title('AUC (%s) for each quiz' % method_labels[method])
++plt.savefig('images/learning_auc.png')
+ plt.show()
+ 
+ 

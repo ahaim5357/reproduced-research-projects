@@ -1,0 +1,107 @@
+{
+    "files": [
+        {
+            "type": "git",
+            "name": "Github",
+            "repository": "https://github.com/ahaim5357/sparfae.git",
+            "commit": "38acf42de139d1a29afda19acd795fa6f5132142",
+            "post_processor": {
+                "type": "convert_notebook"
+            },
+            "extra": {
+                "name": "#github_cloned",
+                "link": "https://github.com/ahaim5357/sparfae",
+                "license": "gpl3later"
+            }
+        },
+        {
+            "type": "url",
+            "name": "NeurIPS 2020 Education Challenge Dataset",
+            "url": "https://dqanonymousdata.blob.core.windows.net/neurips-public/data.zip",
+            "dir": "eedi_data",
+            "post_processor": {
+                "type": "unpack_archive"
+            },
+            "extra": {
+                "name": "NeurIPS 2020 Education Challenge Dataset",
+                "link": "https://eedi.com/projects/neurips-education-challenge",
+                "license": "cc4ncnd"
+            }
+        }
+    ],
+    "ignore": [
+        "images*",
+        "eedi_data*",
+        "synthetic_results*",
+        "__pycache__*",
+        "*.ipynb",
+        "*.csv"
+    ],
+    "extra": {
+        "schema_version": 1,
+        "status": 4,
+        "systems": {
+            "GPU": [
+                "debian-11",
+                "debian-12",
+                "docker-20.10-nvidia",
+                "docker-23.0-nvidia"
+            ]
+        },
+        "languages": {
+            "python": [
+                "3.11.2",
+                "3.11.4"
+            ]
+        },
+        "authors": [
+            "https://orcid.org/0000-0002-3899-2450",
+            "Malwina Dywel",
+            "Melanie Fleckenstein",
+            "https://orcid.org/0000-0001-7076-9737"
+        ],
+        "groups": [
+            "conference",
+            "full_paper",
+            "edm",
+            "2022"
+        ],
+        "links": {
+            "https://doi.org/10.5281/zenodo.6853067": {
+                "name": "Sparse Factor Autoencoders for Item Response Theory",
+
+                "tags": [
+                    {
+                        "value": "paper",
+                        "license": "cc4"
+                    }
+                ]
+            },
+            "https://github.com/bpaassen/sparfae": {
+                "name": "#github",
+                "license": "#gpl3later",
+
+                "tags": [
+                    {
+                        "value": "data",
+                        "license": "gpl3later"
+                    },
+                    {
+                        "value": "materials",
+                        "license": "gpl3later"
+                    }
+                ]
+            },
+            "https://eedi.com/projects/neurips-education-challenge": {
+                "name": "NeurIPS 2020 Education Challenge Dataset",
+
+                "tags": [
+                    {
+                        "value": "data",
+                        "license": "cc4ncnd"
+                    }
+                ]
+            }
+        }
+    }
+}

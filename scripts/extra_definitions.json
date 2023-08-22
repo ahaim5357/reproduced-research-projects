@@ -74,10 +74,20 @@
             "short": "CC-BY-4.0",
             "link": "https://creativecommons.org/licenses/by/4.0/"
         },
+        "cc4ncnd": {
+            "name": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
+            "short": "CC-BY-NC-ND-4.0",
+            "link": "https://creativecommons.org/licenses/by-nc-nd/4.0//"
+        },
         "aspdl": {
             "name": "ASSISTments Public Data License v0.1",
             "short": "ASSIST-PDL-0.1",
             "link": "https://docs.google.com/document/d/1qUOWAgdXtBk7vk2ogUZDe4GXGDO-byAx5RJclRJFyDo/edit#heading=h.5iu406k5nt8u"
+        },
+        "gpl3later": {
+            "name": "GNU General Public License v3.0 or later",
+            "short": "GPL-3.0-or-later",
+            "link": "https://spdx.org/licenses/GPL-3.0-or-later.html"
         }
     },
     "references": {
