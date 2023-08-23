@@ -1,0 +1,8 @@
+**/clean
+**/env
+**/src
+**/.dockerignore
+**/Dockerfile*
+**/README.md
+**/instructions.md
+**/issues.md
