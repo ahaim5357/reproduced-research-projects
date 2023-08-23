@@ -24,43 +24,20 @@ RUN apk add git
 RUN python3 -m pip install "jammies[all]==${JAMMIES_VER}"
 RUN jammies patch src -y
 
+# Setup Java runtime via jlink
+FROM eclipse-temurin:17.0.8_7-jdk-jammy as java
+
+# Create custom runtime
+RUN $JAVA_HOME/bin/jlink \
+    --add-modules ALL-MODULE-PATH \
+    --strip-debug \
+    --no-man-pages \
+    --no-header-files \
+    --compress=2 \
+    --output /javaruntime
+
 # Setup project specific info
-FROM nvidia/cuda:11.8.0-runtime-ubuntu22.04
-
-## Disable interactions with package configurations
-ARG DEBIAN_FRONTEND=noninteractive
-
-## Setup necessary libraries
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    make \
-    build-essential \
-    libssl-dev \
-    zlib1g-dev \
-    libbz2-dev \
-    libreadline-dev \
-    libsqlite3-dev \
-    wget \
-    ca-certificates \
-    curl \
-    llvm \
-    libncurses5-dev \
-    xz-utils \
-    tk-dev \
-    libxml2-dev \
-    libxmlsec1-dev \
-    libffi-dev \
-    liblzma-dev \
-    mecab-ipadic-utf8 \
-    git
-
-## Install pyenv and chosen Python version
-ENV PYENV_ROOT /.pyenv
-ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-
-RUN curl https://pyenv.run | bash \
-    && pyenv install 3.11.4 \
-    && pyenv global 3.11.4 \
-    && pyenv rehash
+FROM python:3.11.4-bookworm
 
 ## Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -68,13 +45,18 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ## Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
+## Copy Java runtime over
+ENV JAVA_HOME=/opt/java/openjdk
+ENV PATH $JAVA_HOME/bin:$PATH
+COPY --from=java /javaruntime $JAVA_HOME
+
 ## Copy project files from previous stage here
 RUN mkdir /src
 COPY --from=projects /src /src
 WORKDIR /src
 
 ## Setup python
-RUN python3 -m pip install -r requirements.txt
+RUN python3 -m pip install .
 
 ## Setup script run
-CMD [ "python3", "<file_name>" ]
+CMD [ "python3", "./helper_code/models/regression/train_rf_regression_full_cv.py", "--training-data-filepath", "./VLE_datasets/v1/VLE_12k_dataset_v1.csv", "--output-dir", "./results" ]

@@ -1,0 +1,68 @@
+{
+    "files": [
+        {
+            "type": "git",
+            "name": "Github",
+            "repository": "https://github.com/ahaim5357/VLE-Dataset.git",
+            "commit": "6f992d8f5ac4837cc364bfd7421a983976306e89",
+            "extra": {
+                "name": "#github_cloned",
+                "link": "https://github.com/ahaim5357/VLE-Dataset"
+            }
+        }
+    ],
+    "extra": {
+        "schema_version": 1,
+        "status": 1,
+        "systems": {
+            "_": [
+                "debian-11",
+                "debian-12",
+                "docker-20.10-nvidia",
+                "docker-23.0-nvidia"
+            ]
+        },
+        "languages": {
+            "python": [
+                "3.11.2",
+                "3.11.4"
+            ],
+            "java": [
+                "17.0.8"
+            ]
+        },
+        "authors": [
+            "Sahan Bulathwela",
+            "Meghana Verma",
+            "https://orcid.org/0000-0003-1302-6093",
+            "https://orcid.org/0000-0003-4734-4532",
+            "https://orcid.org/0000-0002-2030-0073"
+        ],
+        "groups": [
+            "conference",
+            "short_paper",
+            "edm",
+            "2022"
+        ],
+        "links": {
+            "https://doi.org/10.5281/zenodo.6853185": {
+                "name": "Can Population-based Engagement Improve Personalisation? A Novel Dataset and Experiment",
+
+                "tags": [
+                    {
+                        "value": "paper",
+                        "license": "cc4"
+                    }
+                ]
+            },
+            "https://github.com/sahanbull/VLE-Dataset": {
+                "name": "#github",
+
+                "tags": [
+                    "data",
+                    "materials"
+                ]
+            }
+        }
+    }
+}
