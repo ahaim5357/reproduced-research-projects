@@ -9,7 +9,7 @@ import re
 import sys
 import json
 from typing import List, Dict, Any, Optional, Tuple, Set
-from distutils.version import LooseVersion
+from packaging.version import Version
 from urllib.parse import quote
 from urllib import request
 
@@ -329,7 +329,7 @@ class SchemaInfoV1:
 
             # Sort Versions
             organizer_versions: List[str] = list(system_versions.keys())
-            organizer_versions.sort(key = LooseVersion)
+            organizer_versions.sort(key = Version)
             version_list: List[str] = []
             for organizer_version in organizer_versions:
                 version_list.append(system_versions[organizer_version])
@@ -374,7 +374,7 @@ class SchemaInfoV1:
 
             # Sort versions
             versions: list[str] = languages[language]
-            versions.sort(key = LooseVersion)
+            versions.sort(key = Version)
             versions: str = ' | '.join(versions)
 
             # Output to list
