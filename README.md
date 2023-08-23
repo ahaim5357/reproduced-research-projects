@@ -4,10 +4,10 @@ This is a repository containing all the projects that have been successfully rep
 
 ## Basic Setup Instructions
 
-All projects use [project_patcher] to setup the necessary workspace. You can install `project_patcher` via:
+All projects use [jammies] to setup the necessary workspace. You can install `jammies` via:
 
 ```sh
-python3 -m pip install 'project_patcher'
+python3 -m pip install 'jammies'
 ```
 
 > python3 is replaced with `py` on Windows machines. Additionally, the `python3 -m` prefix is unnecessary if `pip` is properly added to the path.
@@ -15,34 +15,30 @@ python3 -m pip install 'project_patcher'
 When navigating to any project folder, you should run the following command to setup the necessary project files:
 
 ```sh
-project_patcher src
+jammies patch src
 ```
 
-> If you are using v0.1.0 of `project_patcher`, the command will be:
->```
->project_patcher init
->```
-
-From there, you can follow the specific instructions associated with each project using the `_src` directory as the working directory.
+From there, you can follow the specific instructions associated with each project using the `src` directory as the working directory.
 
 ### Optional Dependencies
 
-Some projects require additional configurations not provided by default within `project_patcher`. As such, you can add optional dependency packages via:
+Some projects require additional configurations not provided by default within `jammies`. As such, you can add optional dependency packages via:
 
 ```sh
-python3 -m pip install 'project_patcher[<optional_dependency>]'
+python3 -m pip install 'jammies[<optional_dependency>]'
 ```
 
-Each project will specify if anything other than the default `project_patcher` is necessary for setup.
+Each project will specify if anything other than the default `jammies` is necessary for setup.
 
-> As of 0.2.0, if you want to download all optional dependencies of `project_patcher`, run:
+> If you want to download all optional dependencies of `jammies`, run:
 >```sh
->python3 -m pip install 'project_patcher[all]'
+>python3 -m pip install 'jammies[all]'
 >```
+> This is the recommended method to use.
 
 ## Generating READMEs
 
-READMEs can be generated using the [`generate_readme.py`][gen] script. This script is currently written for Python 3.9.5 and uses no external packages.
+READMEs can be generated using the [`generate_readme.py`][gen] script. This script is currently written for Python 3.11.2 and uses no external packages.
 
 * `generate_readme.py <start_dir> [--force/-f]`
     * `start_dir`: Specify the top directory to start generating READMEs for.
@@ -228,7 +224,7 @@ The Patches for the Projects that contain exclusive rights are provided within t
 
 The Patches are provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the Authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Patches or the use of other dealings in the Patches.
 
-[project_patcher]: https://pypi.org/project/project-patcher/
+[jammies]: https://pypi.org/project/jammies/
 [git]: https://git-scm.com/
 
 [gen]: ./scripts/generate_readme.py
