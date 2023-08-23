@@ -79,7 +79,6 @@
             },
             "https://github.com/bpaassen/sparfae": {
                 "name": "#github",
-                "license": "#gpl3later",
 
                 "tags": [
                     {
