@@ -10,6 +10,7 @@ This is a project constructor for the paper [*Sparse Factor Autoencoders for Ite
 
 ![Debian (GPU): bullseye (11) | bookworm (12)](https://img.shields.io/badge/Debian%20%28GPU%29-bullseye%20%2811%29%20%7C%20bookworm%20%2812%29-informational)  
 ![Docker NVIDIA (GPU): 20.10 | 23.0](https://img.shields.io/badge/Docker%20NVIDIA%20%28GPU%29-20.10%20%7C%2023.0-informational)  
+![Ubuntu (GPU): Jammy Jellyfish (22.04)](https://img.shields.io/badge/Ubuntu%20%28GPU%29-Jammy%20Jellyfish%20%2822.04%29-informational)  
 
 #### Languages
 ![Python: 3.11.2 | 3.11.4](https://img.shields.io/badge/Python-3.11.2%20%7C%203.11.4-informational)  
@@ -156,8 +157,8 @@ Based on some analysis of the graphs, this assumes that condition A is condition
 * Figures 7 and 8 are not generated in the codebase.
 * Only the number of skills in Figure 6 is generated, but without the lines of best fit. However, the points are essentially accurate to those in the paper.
 
-*[GPL-3.0-or-later]: GNU General Public License v3.0 or later
-*[Cloned GitHub]: Cloned GitHub Repository
 *[CC-BY-4.0]: Creative Commons Attribution 4.0 International
 *[GitHub]: GitHub Repository
+*[GPL-3.0-or-later]: GNU General Public License v3.0 or later
+*[Cloned GitHub]: Cloned GitHub Repository
 *[CC-BY-NC-ND-4.0]: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
