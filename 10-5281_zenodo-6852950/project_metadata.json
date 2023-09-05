@@ -1,0 +1,73 @@
+{
+    "files": [
+        {
+            "type": "git",
+            "name": "Github",
+            "repository": "https://github.com/ahaim5357/ability_bounds.git",
+            "commit": "7d6696d48873b2bb3b2ba67f2babd5b489c84354",
+            "post_processor": {
+                "type": "convert_notebook"
+            },
+            "extra": {
+                "name": "#github_cloned",
+                "link": "https://github.com/ahaim5357/ability_bounds",
+                "license": "gpl3later"
+            }
+        }
+    ],
+    "extra": {
+        "schema_version": 1,
+        "status": 4,
+        "systems": {
+            "_": [
+                "debian-11",
+                "debian-12",
+                "docker-20.10-nvidia",
+                "docker-23.0-nvidia"
+            ]
+        },
+        "languages": {
+            "python": [
+                "3.11.2",
+                "3.11.4"
+            ]
+        },
+        "authors": [
+            "https://orcid.org/0000-0002-3899-2450",
+            "https://orcid.org/0000-0003-2517-4907",
+            "https://orcid.org/0000-0001-7076-9737"
+        ],
+        "groups": [
+            "conference",
+            "poster",
+            "edm",
+            "2022"
+        ],
+        "links": {
+            "https://doi.org/10.5281/zenodo.6852950": {
+                "name": "Faster Confidence Intervals for Item Response Theory via an Approximate Likelihood Profile",
+
+                "tags": [
+                    {
+                        "value": "paper",
+                        "license": "cc4"
+                    }
+                ]
+            },
+            "https://github.com/bpaassen/ability_bounds": {
+                "name": "#github",
+
+                "tags": [
+                    {
+                        "value": "data",
+                        "license": "gpl3later"
+                    },
+                    {
+                        "value": "materials",
+                        "license": "gpl3later"
+                    }
+                ]
+            }
+        }
+    }
+}
