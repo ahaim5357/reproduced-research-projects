@@ -35,6 +35,13 @@
                 "12": "bookworm"
             }
         },
+        "ubuntu": {
+            "name": "Ubuntu",
+            "versions": {
+                "20.04": "Focal Fossa",
+                "22.04": "Jammy Jellyfish"
+            }
+        },
         "docker": {
             "name": "Docker",
             "modifiers": {

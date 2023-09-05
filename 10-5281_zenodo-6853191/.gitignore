@@ -1,0 +1,13 @@
+# Ignore clean and src directories
+/clean
+/src
+
+# Ignore environments
+/env
+
+# Ignore IDEs
+.vscode
+
+# Ignore caches
+__pycache__
+.jammies.toml

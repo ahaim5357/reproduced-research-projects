@@ -1,0 +1,79 @@
+{
+    "files": [
+        {
+            "type": "git",
+            "name": "Github",
+            "repository": "https://github.com/ahaim5357/EDM2022CLO.git",
+            "commit": "bfd7a29d350f39a95866e9b24b6f4339016b2258",
+            "post_processor": {
+                "type": "convert_notebook"
+            },
+            "extra": {
+                "name": "#github_cloned",
+                "link": "https://github.com/ahaim5357/EDM2022CLO"
+            }
+        }
+    ],
+    "ignore": [
+        "analyze*",
+        "apply*",
+        "create*",
+        "evaluate*",
+        "*.ipynb",
+        "data*",
+        "*.pdf",
+        "logs*",
+        "multilabel*",
+        "remember*",
+        "understand*"
+    ],
+    "extra": {
+        "schema_version": 1,
+        "status": 4,
+        "systems": {
+            "GPU": [
+                "ubuntu-20.04",
+                "docker-20.10-nvidia",
+                "docker-23.0-nvidia"
+            ]
+        },
+        "languages": {
+            "python": [
+                "3.9.18"
+            ]
+        },
+        "authors": [
+            "https://orcid.org/0000-0002-5971-8469",
+            "Mladen Raković",
+            "Boon Xin Poh",
+            "https://orcid.org/0000-0001-9265-1908",
+            "https://orcid.org/0000-0002-8236-3133"
+        ],
+        "groups": [
+            "conference",
+            "short_paper",
+            "edm",
+            "2022"
+        ],
+        "links": {
+            "https://doi.org/10.5281/zenodo.6853191": {
+                "name": "Automatic Classification of Learning Objectives Based on Bloom's Taxonomy",
+
+                "tags": [
+                    {
+                        "value": "paper",
+                        "license": "cc4"
+                    }
+                ]
+            },
+            "https://github.com/SteveLEEEEE/EDM2022CLO": {
+                "name": "#github",
+
+                "tags": [
+                    "data",
+                    "materials"
+                ]
+            }
+        }
+    }
+}
