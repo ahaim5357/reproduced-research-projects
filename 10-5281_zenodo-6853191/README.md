@@ -12,7 +12,7 @@ This is a project constructor for the paper [*Automatic Classification of Learni
 ![Ubuntu (GPU): Focal Fossa (20.04)](https://img.shields.io/badge/Ubuntu%20%28GPU%29-Focal%20Fossa%20%2820.04%29-informational)  
 
 #### Languages
-![Python: 3.9.18](https://img.shields.io/badge/Python-3.9.18-informational)  
+![Python: 3.9](https://img.shields.io/badge/Python-3.9-informational)  
 
 #### Resources
 
@@ -119,7 +119,7 @@ There are also some results for the Naive Baves (NB), Random Forest (RF), and Lo
         * AUC 0.877 -> 0.875
         * F1 0.826 -> 0.827
 
-*[GitHub]: GitHub Repository
 *[ARR]: All Rights Reserved
-*[Cloned GitHub]: Cloned GitHub Repository
 *[CC-BY-4.0]: Creative Commons Attribution 4.0 International
+*[GitHub]: GitHub Repository
+*[Cloned GitHub]: Cloned GitHub Repository

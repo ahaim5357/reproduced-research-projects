@@ -13,7 +13,7 @@ This is a project constructor for the paper [*Sparse Factor Autoencoders for Ite
 ![Ubuntu (GPU): Jammy Jellyfish (22.04)](https://img.shields.io/badge/Ubuntu%20%28GPU%29-Jammy%20Jellyfish%20%2822.04%29-informational)  
 
 #### Languages
-![Python: 3.11.2 | 3.11.4](https://img.shields.io/badge/Python-3.11.2%20%7C%203.11.4-informational)  
+![Python: 3.11](https://img.shields.io/badge/Python-3.11-informational)  
 
 #### Resources
 
@@ -158,7 +158,7 @@ Based on some analysis of the graphs, this assumes that condition A is condition
 * Only the number of skills in Figure 6 is generated, but without the lines of best fit. However, the points are essentially accurate to those in the paper.
 
 *[CC-BY-4.0]: Creative Commons Attribution 4.0 International
-*[GitHub]: GitHub Repository
-*[GPL-3.0-or-later]: GNU General Public License v3.0 or later
 *[Cloned GitHub]: Cloned GitHub Repository
 *[CC-BY-NC-ND-4.0]: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+*[GitHub]: GitHub Repository
+*[GPL-3.0-or-later]: GNU General Public License v3.0 or later

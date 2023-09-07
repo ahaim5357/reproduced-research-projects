@@ -12,7 +12,7 @@ This is a project constructor for the paper [*Faster Confidence Intervals for It
 ![Docker NVIDIA: 20.10 | 23.0](https://img.shields.io/badge/Docker%20NVIDIA-20.10%20%7C%2023.0-informational)  
 
 #### Languages
-![Python: 3.11.2 | 3.11.4](https://img.shields.io/badge/Python-3.11.2%20%7C%203.11.4-informational)  
+![Python: 3.11](https://img.shields.io/badge/Python-3.11-informational)  
 
 #### Resources
 
@@ -97,7 +97,7 @@ The results tend to be within the confidence intervals provided when running the
 
 The runtime graphs will differ depending on the machine used, so the results are inconsistent. However, the reported line plots are similar in relation to the other experimental conditions.
 
+*[CC-BY-4.0]: Creative Commons Attribution 4.0 International
 *[GPL-3.0-or-later]: GNU General Public License v3.0 or later
 *[Cloned GitHub]: Cloned GitHub Repository
 *[GitHub]: GitHub Repository
-*[CC-BY-4.0]: Creative Commons Attribution 4.0 International
