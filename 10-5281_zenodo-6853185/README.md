@@ -12,8 +12,8 @@ This is a project constructor for the paper [*Can Population-based Engagement Im
 ![Docker NVIDIA: 20.10 | 23.0](https://img.shields.io/badge/Docker%20NVIDIA-20.10%20%7C%2023.0-informational)  
 
 #### Languages
-![Java: 17.0.8](https://img.shields.io/badge/Java-17.0.8-informational)  
-![Python: 3.11.2 | 3.11.4](https://img.shields.io/badge/Python-3.11.2%20%7C%203.11.4-informational)  
+![Java: 17](https://img.shields.io/badge/Java-17-informational)  
+![Python: 3.11](https://img.shields.io/badge/Python-3.11-informational)  
 
 #### Resources
 
@@ -102,7 +102,7 @@ None of the results generated match anything reported in the papers. The `result
 
 As such, no consistent results are reported in the paper.
 
+*[ARR]: All Rights Reserved
 *[CC-BY-4.0]: Creative Commons Attribution 4.0 International
 *[GitHub]: GitHub Repository
-*[ARR]: All Rights Reserved
 *[Cloned GitHub]: Cloned GitHub Repository
