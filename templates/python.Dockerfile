@@ -1,5 +1,5 @@
 # Set global arguments
-ARG JAMMIES_VER=0.4.5
+ARG JAMMIES_VER=0.5.0
 
 # Get and patch project for working directory
 FROM python:3.11.2-alpine3.17 as projects
