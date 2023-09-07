@@ -1,0 +1,114 @@
+{
+    "files": [
+        {
+            "type": "osf",
+            "id": "f8w9p",
+            "post_processor": {
+                "type": "and",
+                "processors": [
+                    {
+                        "type": "convert_notebook"
+                    },
+                    {
+                        
+                        "type": "file_operations",
+                        "move": {
+                            "Dataset/*": "."
+                        }
+                    }
+                ],
+                "quick_fail": true
+            },
+            "extra": {
+                "name": "#osf",
+                "link": "https://osf.io/f8w9p/",
+                "license": "aspdl"
+            }
+        },
+        {
+            "type": "osf",
+            "id": "9pgv5",
+            "post_processor": {
+                "type": "file_operations",
+                "move": {
+                    "**/student_support_logs.csv": "."
+                },
+                "delete": [
+                    "**/!(student_support_logs.csv|*.pdf)"
+                ]
+            },
+            "extra": {
+                "name": "Automatic Interpretable Personalized Learning Datasets",
+                "link": "https://osf.io/9pgv5/",
+                "license": "aspdl"
+            }
+        }
+    ],
+    "ignore": [
+        "**/*.csv",
+        "**/*.ipynb"
+    ],
+    "extra": {
+        "schema_version": 1,
+        "status": 5,
+        "systems": {
+            "_": [
+                "debian-11",
+                "debian-12",
+                "docker-20.10",
+                "docker-23.0"
+            ]
+        },
+        "languages": {
+            "python": [
+                "3.9"
+            ]
+        },
+        "authors": [
+            "https://orcid.org/0000-0002-9287-4201",
+            "https://orcid.org/0000-0002-3280-288X"
+        ],
+        "groups": [
+            "conference",
+            "poster",
+            "edm",
+            "2022"
+        ],
+        "links": {
+            "https://doi.org/10.5281/zenodo.6853053": {
+                "name": "Student Perception on the Effectiveness of On-Demand Assistance in Online Learning Platforms",
+
+                "tags": [
+                    {
+                        "value": "paper",
+                        "license": "cc4"
+                    }
+                ]
+            },
+            "https://osf.io/ps6vm": {
+                "name": "#osf",
+                
+                "tags": [
+                    {
+                        "value": "data",
+                        "license": "aspdl"
+                    },
+                    {
+                        "value": "materials",
+                        "license": "aspdl"
+                    }
+                ]
+            },
+            "https://osf.io/9pgv5/": {
+                "name": "Automatic Interpretable Personalized Learning Datasets",
+                
+                "tags": [
+                    {
+                        "value": "data",
+                        "license": "aspdl"
+                    }
+                ]
+            }
+        }
+    }
+}
