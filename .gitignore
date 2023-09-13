@@ -11,3 +11,4 @@ _env
 # Ignore caches
 __pycache__
 .jammies.toml
+node_modules
