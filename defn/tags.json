@@ -1,0 +1,16 @@
+{
+    "published": {
+        "name": "Published",
+        "defn": "published.json"
+    },
+    "year": {
+        "name": "${tag}",
+        "short": "${tag{2,}}"
+    },
+    "paper": {
+        "name": "Paper",
+        "defn": "paper.json"
+    },
+    "data": "Data",
+    "materials": "Materials"
+}

@@ -1,0 +1,22 @@
+{
+    "lak": {
+        "name": "Learning Analytics and Knowledge",
+        "short": "LAK",
+        "link": "https://www.solaresearch.org/events/lak"
+    },
+    "aied": {
+        "name": "Artificial Intelligence in Education",
+        "short": "AIED",
+        "link": "https://iaied.org/"
+    },
+    "edm": {
+        "name": "Educational Data Mining",
+        "short": "EDM",
+        "link": "https://educationaldatamining.org/"
+    },
+    "lats": {
+        "name": "Learning @ Scale",
+        "short": "L@S",
+        "link": "https://learningatscale.acm.org/"
+    }
+}

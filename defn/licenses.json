@@ -1,0 +1,32 @@
+{
+    "_default": "#ARR",
+    "ARR": {
+        "name": "All Rights Reserved",
+        "short": "ARR"
+    },
+    "MIT": {
+        "name": "MIT License",
+        "short": "MIT",
+        "link": "https://opensource.org/license/mit/"
+    },
+    "CC-BY-4.0": {
+        "name": "Creative Commons Attribution 4.0 International",
+        "short": "CC-BY-4.0",
+        "link": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "CC-BY-NC-ND-4.0": {
+        "name": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
+        "short": "CC-BY-NC-ND-4.0",
+        "link": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+    },
+    "ASSIST-PDL-0.1": {
+        "name": "ASSISTments Public Data License v0.1",
+        "short": "ASSIST-PDL-0.1",
+        "link": "https://docs.google.com/document/d/1qUOWAgdXtBk7vk2ogUZDe4GXGDO-byAx5RJclRJFyDo/edit#heading=h.5iu406k5nt8u"
+    },
+    "GPL-3.0-or-later": {
+        "name": "GNU General Public License v3.0 or later",
+        "short": "GPL-3.0-or-later",
+        "link": "https://spdx.org/licenses/GPL-3.0-or-later.html"
+    }
+}

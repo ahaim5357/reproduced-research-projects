@@ -1,0 +1,19 @@
+{
+    "osf": {
+        "name": "Open Science Framework",
+        "short": "OSF"
+    },
+    "github": {
+        "name": "GitHub Repository",
+        "short": "GitHub",
+        "modifiers": {
+            "cloned": {
+                "name": "Cloned ${parent$name}",
+                "short": "Cloned ${parent$short}"
+            }
+        }
+    },
+    "drive": {
+        "name": "Google Drive"
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "windows": {
+        "name": "Windows",
+        "link": "https://www.microsoft.com/en-us/windows",
+        "modifiers": {
+            "_default": "Native",
+            "wsl": {
+                "name": "Windows Subsystem for Linux",
+                "short": "WSL",
+                "link": "https://learn.microsoft.com/en-us/windows/wsl/",
+                "version_name": "${name} ${version}",
+                "version_short": "${name}${version}"
+            }
+        }
+    },
+    "mac": {
+        "name": "macOS",
+        "link": "https://www.apple.com/macos",
+        "versions": {
+            "10.6": "Snow Leopard",
+            "10.7": "Lion",
+            "10.8": "Mountain Lion",
+            "10.9": "Mavericks",
+            "10.10": "Yosemite",
+            "10.11": "El Capitan",
+            "10.12": "Sierra",
+            "10.13": "High Sierra",
+            "10.14": "Mojave",
+            "10.15": "Catalina",
+            "11": "Big Sur",
+            "12": "Monterey",
+            "13": "Ventura"
+        },
+        "modifiers": {
+            "intel": "Intel Chipset",
+            "m1": "M1 Chipset",
+            "m2": "M2 Chipset"
+        }
+    },
+    "debian": {
+        "name": "Debian",
+        "link": "https://www.debian.org/",
+        "versions": {
+            "7": "wheezy",
+            "8": "jessie",
+            "9": "stretch",
+            "10": "buster",
+            "11": "bullseye",
+            "12": "bookworm"
+        }
+    },
+    "ubuntu": {
+        "name": "Ubuntu",
+        "link": "https://ubuntu.com/",
+        "versions": {
+            "14.04": "Trusty Tahr",
+            "16.04": "Xenial Xerus",
+            "18.04": "Bionic Beaver",
+            "20.04": "Focal Fossa",
+            "22.04": "Jammy Jellyfish"
+        }
+    },
+    "docker": {
+        "name": "Docker",
+        "link": "https://www.docker.com/",
+        "modifiers": {
+            "nvidia": {
+                "name": "NVIDIA Container Toolkit",
+                "short": "NVIDIA",
+                "link": "https://github.com/NVIDIA/nvidia-docker"
+            }
+        }
+    }
+}

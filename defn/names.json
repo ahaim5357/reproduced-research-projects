@@ -1,0 +1,11 @@
+{
+    "loc": {
+        "name": "Locations",
+        "defn": "locations.json"
+    },
+    "data": {
+        "name": "Dataset",
+        "defn": "datasets.json",
+        "tags": "data"
+    }
+}

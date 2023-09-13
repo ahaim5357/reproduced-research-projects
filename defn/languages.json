@@ -1,0 +1,16 @@
+{
+    "languages": {
+        "java": {
+            "name": "Java",
+            "link": "https://openjdk.org/"
+        },
+        "python": {
+            "name": "Python",
+            "link": "https://www.python.org/"
+        },
+        "r": {
+            "name": "R",
+            "link": "https://www.r-project.org/"
+        }
+    }
+}
